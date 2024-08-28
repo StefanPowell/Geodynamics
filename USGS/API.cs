@@ -3,6 +3,8 @@ using System.Text.Json;
 
 namespace EarthQuake.USGS
 {
+    //run api daily
+    //on api daily run save all earthquake data in database in AWS cloud
     public class API
     {
         public async void SendQuery(string format, DateTime starttime, DateTime endtime)
@@ -16,6 +18,11 @@ namespace EarthQuake.USGS
 
             Console.WriteLine(responseBody);
             Console.ReadLine();
+        }
+
+        public List<EarthQuakeFeature> GetQuakes(DateTime starttime, DateTime endtime)
+        {
+            return new List<EarthQuakeFeature> { new EarthQuakeFeature() };
         }
     }
 }

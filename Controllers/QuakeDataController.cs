@@ -25,7 +25,7 @@ namespace EarthQuake.Controllers
         {
             API x = new API();
             x.SendQuery("", DateTime.Now, DateTime.Now);
-
+            return new List<EarthQuakeFeature>();
         }
     }
 }

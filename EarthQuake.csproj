@@ -17,6 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="GeoDynamics\Global Stresses\" />
+    <Folder Include="Plate Tectonics\" />
     <Folder Include="Repository\FaultLine\" />
     <Folder Include="Repository\EarthMovements\" />
   </ItemGroup>
