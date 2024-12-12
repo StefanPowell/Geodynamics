@@ -8,11 +8,6 @@ namespace EarthQuake.Controllers
     [Route("[controller]")]
     public class QuakeDataController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
-
         private readonly ILogger<QuakeDataController> _logger;
 
         public QuakeDataController(ILogger<QuakeDataController> logger)
@@ -21,11 +16,11 @@ namespace EarthQuake.Controllers
         }
 
         [HttpGet(Name = "GetQuakes")]
-        public List<EarthQuakeFeature> GetQuakeData()
+        public async Task<List<Feature>> GetQuakeData()
         {
             API x = new API();
-            x.SendQuery("", DateTime.Now, DateTime.Now);
-            return new List<EarthQuakeFeature>();
+            List<Feature> test = await x.SendQuery("", DateOnly.FromDateTime(DateTime.Now.AddDays(-7)), DateOnly.FromDateTime(DateTime.Now.AddDays(-1)));
+            return test;
         }
     }
 }
