@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EarthQuake", "EarthQuake.csproj", "{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EarthQuakeWebApp", "..\EarthQuakeWebApp\EarthQuakeWebApp.csproj", "{048E3BDC-987C-4F74-A8FE-E3A6C76281A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EarthQuakeWebApp", "..\EarthQuakeWebApp\EarthQuakeWebApp.csproj", "{048E3BDC-987C-4F74-A8FE-E3A6C76281A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

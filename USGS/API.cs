@@ -4,6 +4,8 @@ using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http.Features;
 using System.Threading.Tasks;
 using System.Globalization;
+using Microsoft.AspNetCore.Mvc;
+using EarthQuake.Repository;
 
 namespace EarthQuake.USGS
 {
@@ -11,7 +13,16 @@ namespace EarthQuake.USGS
     //on api daily run save all earthquake data in database in AWS cloud
     public class API
     {
-        public async Task<List<Feature>> SendQuery(string format, DateOnly starttime, DateOnly endtime)
+        private List<Feature> _repodatabase;
+        private ApplicationRepoContext _context;
+
+        public API()
+        {
+            _repodatabase = new List<Feature>();  
+            _context = new ApplicationRepoContext(_repodatabase);  
+        }
+
+        public async void SendQuery(DateOnly starttime, DateOnly endtime)
         {
             try
             {
@@ -23,13 +34,12 @@ namespace EarthQuake.USGS
                     string responseBody = await response.Content.ReadAsStringAsync();
                     Root EarthQuakeDataRoot = JsonConvert.DeserializeObject<Root>(responseBody);
                     List<Feature> featurelist = EarthQuakeDataRoot.features;
-                    return featurelist;
+                    _context.SaveData(featurelist);
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                return new List<Feature>();
                 //Build Error Catcher to populate all errors
             }
             

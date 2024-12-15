@@ -21,8 +21,8 @@
   <ItemGroup>
     <Folder Include="GeoDynamics\Global Stresses\" />
     <Folder Include="Plate Tectonics\" />
-    <Folder Include="Repository\FaultLine\" />
-    <Folder Include="Repository\EarthMovements\" />
+    <Folder Include="FaultLine\" />
+    <Folder Include="EarthMovements\" />
   </ItemGroup>
 
 </Project>
