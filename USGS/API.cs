@@ -13,13 +13,11 @@ namespace EarthQuake.USGS
     //on api daily run save all earthquake data in database in AWS cloud
     public class API
     {
-        private List<Feature> _repodatabase;
         private ApplicationRepoContext _context;
 
         public API()
         {
-            _repodatabase = new List<Feature>();  
-            _context = new ApplicationRepoContext(_repodatabase);  
+            _context = new ApplicationRepoContext();  
         }
 
         public async void SendQuery(DateOnly starttime, DateOnly endtime)
@@ -45,9 +43,9 @@ namespace EarthQuake.USGS
             
         }
 
-        public List<EarthQuakeFeature> GetQuakes(DateTime starttime, DateTime endtime)
+        public List<Feature> GetQuakesQuery(DateOnly startdate, DateOnly enddate)
         {
-            return new List<EarthQuakeFeature> { new EarthQuakeFeature() };
+            return _context.GetBetweenDates(startdate, enddate);
         }
     }
 }

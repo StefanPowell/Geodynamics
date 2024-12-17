@@ -9,7 +9,7 @@ namespace EarthQuake.Controllers
     public class QuakeDataController : ControllerBase
     {
         private readonly ILogger<QuakeDataController> _logger;
-        API x = new API();
+        API quakeAPI = new API();
 
         public QuakeDataController(ILogger<QuakeDataController> logger)
         {
@@ -19,19 +19,19 @@ namespace EarthQuake.Controllers
         [HttpPost("today")]
         public void PostTodayQuakes()
         {
-            x.SendQuery(DateOnly.FromDateTime(DateTime.Now), DateOnly.FromDateTime(DateTime.Now.AddDays(1)));
+            quakeAPI.SendQuery(DateOnly.FromDateTime(DateTime.Now), DateOnly.FromDateTime(DateTime.Now.AddDays(1)));
         }
 
         [HttpPost("daterange")]
         public void PostQuakesBetweenDate(DateTime startdate, DateTime enddate)
         {
-            x.SendQuery(DateOnly.FromDateTime(startdate), DateOnly.FromDateTime(enddate));
+            quakeAPI.SendQuery(DateOnly.FromDateTime(startdate), DateOnly.FromDateTime(enddate));
         }
 
         [HttpGet(Name = "GetQuakes")]
-        public Task<List<Feature>> GetQuakeData()
+        public async Task<List<Feature>> GetQuakeData()
         {
-            Task <List<Feature>> test = x.SendQuery(DateOnly.FromDateTime(DateTime.Now.AddDays(-7)), DateOnly.FromDateTime(DateTime.Now.AddDays(-1)));
+            List<Feature> test = quakeAPI.GetQuakesQuery(DateOnly.FromDateTime(DateTime.Now.AddDays(-7)), DateOnly.FromDateTime(DateTime.Now.AddDays(-1)));
             return test;
         }
     }

@@ -1,4 +1,4 @@
-﻿namespace EarthQuake.Computatiuons
+﻿namespace EarthQuake.Computations
 {
     public class Calculus
     {

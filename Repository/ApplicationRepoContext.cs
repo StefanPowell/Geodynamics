@@ -1,6 +1,7 @@
 ﻿using EarthQuake.Models;
-using EarthQuake.Computations.Common;
+using System.Runtime.InteropServices;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using EarthQuake.Computations;
 
 namespace EarthQuake.Repository
 {
@@ -8,29 +9,39 @@ namespace EarthQuake.Repository
     {
         private List<Feature> _repodatabase;
 
-        public ApplicationRepoContext(List<Feature> repodatabase)
+        public ApplicationRepoContext()
         {
-            repodatabase = repodatabase ?? throw new ArgumentNullException(nameof(repodatabase));
+            _repodatabase = new List<Feature>() ?? throw new ArgumentNullException(nameof(_repodatabase));
         }
 
         public void SaveData(List<Feature> data) { 
-            _repodatabase.AddRange(data);
+            foreach (var feature in data)
+            {
+                _repodatabase.Add(feature);
+            }
         }
 
         public void DeleteData(Feature datapoint) {
             _repodatabase.Remove(datapoint);
         }
 
-        public List<Feature> GetBetweenDates(DateTime startdate, DateTime enddate)
+        public List<Feature> GetBetweenDates(DateOnly startdate, DateOnly enddate)
         {
-           
-           long startdateEpoch = convertToEpoch(startdate);
-            // _repodatabase.Select(x => x.properties.);
-            return new List<Feature>();
+
+            long startdateEpoch = convertToEpoch(startdate);
+            long enddateEpoch = convertToEpoch(enddate);
+            List<Feature> x = _repodatabase.Where(x => (long)x.properties.time > startdateEpoch && (long)x.properties.time < enddateEpoch).ToList();
+            return x;
         }
 
         public List<Feature> GetRepodatabase() {  
             return _repodatabase; 
+        }
+
+        public long convertToEpoch(DateOnly date)
+        {
+            DateTime epoch = new DateTime(1970, 1, 1);
+            return (long)(date.ToDateTime(TimeOnly.MinValue) - epoch).TotalSeconds;
         }
     }
 }

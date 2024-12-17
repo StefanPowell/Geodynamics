@@ -1,6 +1,6 @@
-﻿namespace EarthQuake.Computatiuons
+﻿namespace EarthQuake.Computations
 {
-    public class Common
+    public class SimpleFunctions
     {
         public long convertToEpoch(DateTime date)
         {
