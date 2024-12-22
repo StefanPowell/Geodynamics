@@ -17,7 +17,7 @@ namespace EarthQuake.USGS
 
         public API()
         {
-            _context = new ApplicationRepoContext();  
+            _context = new ApplicationRepoContext() ?? throw new ArgumentNullException(nameof(_context));
         }
 
         public async void SendQuery(DateOnly starttime, DateOnly endtime)
@@ -45,7 +45,7 @@ namespace EarthQuake.USGS
 
         public List<Feature> GetQuakesQuery(DateOnly startdate, DateOnly enddate)
         {
-            return _context.GetBetweenDates(startdate, enddate);
+            return _context.GetRepodatabase();
         }
     }
 }

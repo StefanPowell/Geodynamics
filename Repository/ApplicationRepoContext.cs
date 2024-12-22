@@ -2,10 +2,11 @@
 using System.Runtime.InteropServices;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using EarthQuake.Computations;
+using EarthQuake.Interface;
 
 namespace EarthQuake.Repository
 {
-    public class ApplicationRepoContext
+    public class ApplicationRepoContext : IApplicationRepoContext
     {
         private List<Feature> _repodatabase;
 
@@ -34,7 +35,8 @@ namespace EarthQuake.Repository
             return x;
         }
 
-        public List<Feature> GetRepodatabase() {  
+        public List<Feature> GetRepodatabase() {
+            List<Feature> xx = _repodatabase;
             return _repodatabase; 
         }
 
