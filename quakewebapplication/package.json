@@ -4,9 +4,12 @@
   "private": true,
   "dependencies": {
     "cra-template": "1.2.0",
+    "mapbox-gl": "^3.9.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "web-vitals": "^4.2.4",
+    "mapbox-gl": "3.9.0"
   },
   "scripts": {
     "start": "react-scripts start",

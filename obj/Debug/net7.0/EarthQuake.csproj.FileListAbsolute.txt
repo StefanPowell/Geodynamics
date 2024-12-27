@@ -78,3 +78,5 @@ C:\Users\powel\Dropbox\Geodynamics\obj\Debug\net7.0\ref\EarthQuake.dll
 C:\Users\powel\Dropbox\Geodynamics\bin\Debug\net7.0\quakewebapplication\package-lock.json
 C:\Users\powel\Dropbox\Geodynamics\bin\Debug\net7.0\quakewebapplication\package.json
 C:\Users\powel\Dropbox\Geodynamics\bin\Debug\net7.0\quakewebapplication\public\manifest.json
+C:\Users\powel\Dropbox\Geodynamics\bin\Debug\net7.0\quakewebapplication\build\asset-manifest.json
+C:\Users\powel\Dropbox\Geodynamics\bin\Debug\net7.0\quakewebapplication\build\manifest.json
