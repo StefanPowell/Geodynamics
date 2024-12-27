@@ -1,0 +1,59 @@
+name: Build and Debug React Application
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+
+    steps:
+    # Step 1: Checkout the repository
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Step 2: Set up Node.js
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'  # You can specify the Node.js version you need
+
+    # Step 3: Install dependencies inside the 'quakewebapplication' folder
+    - name: Install dependencies
+      run: |
+        cd quakewebapplication
+        npm install
+
+    # Step 4: Build the React app inside the 'quakewebapplication' folder
+    - name: Build the React app
+      run: |
+        cd quakewebapplication
+        npm run build
+
+    # Step 5: Run tests (if applicable) inside the 'quakewebapplication' folder
+    - name: Run tests
+      run: |
+        cd quakewebapplication
+        npm test -- --coverage
+
+    # Step 6: Debugging - Display environment variables or logs
+    - name: Display environment variables
+      run: |
+        cd quakewebapplication
+        echo "Node Version: $(node -v)"
+        echo "npm Version: $(npm -v)"
+        echo "Installed Packages: $(npm ls)"
+
+    # Step 7: Optionally upload build artifacts (for deployment or debugging)
+    - name: Upload build artifact (optional)
+      uses: actions/upload-artifact@v3
+      with:
+        name: build
+        path: ./quakewebapplication/build
