@@ -87,6 +87,11 @@ jobs:
       env:
         Configuration: ${{ matrix.configuration }}
 
+    #Ensure the path exists the pfx needs to writer to (buggy)
+    - name: Ensure Directory Exists
+      run: mkdir -Force $env:EarthQuake.Package
+      shell: pwsh
+    
     # Decode the base 64 encoded pfx and save the Signing_Certificate
     - name: Decode the pfx
       run: |
