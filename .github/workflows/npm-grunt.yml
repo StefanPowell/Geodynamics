@@ -30,6 +30,13 @@ jobs:
       run: |
         cd quakewebapplication
         npm install
+        npm install web-vitals
+
+    # Step 3: Install web-vitals dependencies inside the 'quakewebapplication' folder
+    - name: Install dependencies
+      run: |
+        cd quakewebapplication
+        npm install web-vitals
 
     # Step 4: Build the React app inside the 'quakewebapplication' folder
     - name: Build the React app
