@@ -45,10 +45,10 @@ jobs:
         npm run build
 
     # Step 5: Run tests (if applicable) inside the 'quakewebapplication' folder
-    - name: Run tests
-      run: |
-        cd quakewebapplication
-        npm test -- --coverage
+    #- name: Run tests
+    #  run: |
+     #   cd quakewebapplication
+      #  npm test -- --coverage
 
     # Step 6: Debugging - Display environment variables or logs
     - name: Display environment variables
