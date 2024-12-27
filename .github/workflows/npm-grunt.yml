@@ -1,4 +1,4 @@
-name: Build and Debug React Application
+name: React WebApplication
 
 on:
   push:
