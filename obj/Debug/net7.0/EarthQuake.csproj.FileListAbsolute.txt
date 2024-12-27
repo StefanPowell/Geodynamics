@@ -75,3 +75,6 @@ C:\Users\powel\Dropbox\Geodynamics\obj\Debug\net7.0\refint\EarthQuake.dll
 C:\Users\powel\Dropbox\Geodynamics\obj\Debug\net7.0\EarthQuake.pdb
 C:\Users\powel\Dropbox\Geodynamics\obj\Debug\net7.0\EarthQuake.genruntimeconfig.cache
 C:\Users\powel\Dropbox\Geodynamics\obj\Debug\net7.0\ref\EarthQuake.dll
+C:\Users\powel\Dropbox\Geodynamics\bin\Debug\net7.0\quakewebapplication\package-lock.json
+C:\Users\powel\Dropbox\Geodynamics\bin\Debug\net7.0\quakewebapplication\package.json
+C:\Users\powel\Dropbox\Geodynamics\bin\Debug\net7.0\quakewebapplication\public\manifest.json

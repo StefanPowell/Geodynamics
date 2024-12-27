@@ -19,10 +19,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="GeoDynamics\Global Stresses\" />
-    <Folder Include="Plate Tectonics\" />
-    <Folder Include="FaultLine\" />
-    <Folder Include="EarthMovements\" />
+    <Folder Include="Computations\Geochemistry\" />
+    <Folder Include="Computations\GeoDynamics\" />
+    <Folder Include="Computations\Geophysics\" />
+    <Folder Include="Computations\Geostatistics\" />
+    <Folder Include="Computations\Volcanology\" />
+    <Folder Include="Computations\Oceanography\" />
+    <Folder Include="Computations\Seismology\Global Stresses\" />
+    <Folder Include="Computations\Seismology\" />
+    <Folder Include="Computations\Seismology\Plate Tectonics\" />
+    <Folder Include="Computations\Seismology\FaultLine\" />
+    <Folder Include="Computations\Seismology\EarthMovements\" />
   </ItemGroup>
 
 </Project>
