@@ -56,7 +56,7 @@ jobs:
       Solution_Name: EarthQuake.sln
       Test_Project_Path: EarthQuake.Tests\EarthQuake.Tests.csproj
       Wap_Project_Directory: EarthQuake.Package
-      Wap_Project_Path: EarthQuake.App.Package.wapproj
+      Wap_Project_Path: EarthQuake.Package\EarthQuake.App.Package.wapproj
 
     steps:
     - name: Checkout
@@ -92,13 +92,6 @@ jobs:
 
     - name: Restore the application
       run: msbuild $env:Solution_Name /t:Restore /p:Configuration=${{ matrix.configuration }}
-      shell: pwsh
-
-    - name: Debug Directory Structure
-      run: |
-        echo "Current Directory: $(pwd)"
-        echo "Contents:"
-        ls -Recurse
       shell: pwsh
 
     - name: Create the app package
