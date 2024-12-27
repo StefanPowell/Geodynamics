@@ -48,16 +48,16 @@ jobs:
   build:
     strategy:
       matrix:
-        configuration: [Debug, Release]
+        configuration: [Debug]
 
     runs-on: windows-latest
 
     env:
       Solution_Name: EarthQuake.sln
-      Test_Project_Path: EarthQuake.Tests\EarthQuake.Tests.csproj
-      App_Project_Path: EarthQuake.App\EarthQuake.App.csproj # Path to the .csproj
-      Wap_Project_Directory: EarthQuake.Package
-      Wap_Project_Path: EarthQuake.Package\EarthQuake.App.Package.wapproj
+      #Test_Project_Path: EarthQuake.Tests\EarthQuake.Tests.csproj
+      App_Project_Path: EarthQuake.csproj 
+      #Wap_Project_Directory: EarthQuake.Package
+      #Wap_Project_Path: EarthQuake.Package\EarthQuake.App.Package.wapproj
 
     steps:
     - name: Checkout
