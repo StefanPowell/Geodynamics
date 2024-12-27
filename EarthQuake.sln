@@ -5,8 +5,6 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EarthQuake", "EarthQuake.csproj", "{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EarthQuakeWebApp", "..\EarthQuakeWebApp\EarthQuakeWebApp.csproj", "{048E3BDC-987C-4F74-A8FE-E3A6C76281A4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{048E3BDC-987C-4F74-A8FE-E3A6C76281A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{048E3BDC-987C-4F74-A8FE-E3A6C76281A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{048E3BDC-987C-4F74-A8FE-E3A6C76281A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{048E3BDC-987C-4F74-A8FE-E3A6C76281A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
