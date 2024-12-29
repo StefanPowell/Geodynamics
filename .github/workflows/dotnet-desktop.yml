@@ -40,6 +40,8 @@ name: .NET Core Web API
 
 on:
   push:
+    paths-ignore:
+      - 'quakewebapplication/**'
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
