@@ -4,3 +4,5 @@
 
 *.vsidx
 *.bin
+*.suo
+*.dtbcache.v2
