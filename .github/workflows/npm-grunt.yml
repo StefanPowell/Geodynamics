@@ -2,6 +2,9 @@ name: React WebApplication
 
 on:
   push:
+    paths-ignore:
+      - 'dotnet-desktop.yml'
+      - 'codeql.yml'
     paths:
       - quakewebapplication/**
     branches:
