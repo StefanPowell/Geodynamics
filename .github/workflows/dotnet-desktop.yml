@@ -42,6 +42,8 @@ on:
   push:
     paths-ignore:
       - 'quakewebapplication/**'
+      - 'codeql.yml'
+      - 'npm-grunt.yml'
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
