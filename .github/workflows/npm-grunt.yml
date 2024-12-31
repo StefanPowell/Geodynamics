@@ -4,7 +4,6 @@ on:
   push:
     paths:
       - quakewebapplication/**
-      - 'npm-grunt.yml'
     branches:
       - main
       - develop
