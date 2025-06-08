@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
+import SeismographChart from './SeismographChart';
 import './App.css';
 
 // Set your Mapbox access token
@@ -7,16 +8,26 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3RlZmFuMzc1IiwiYSI6ImNtNTdvM3dxdDNocjMybXE3N
 
 function App() {
   const mapContainer = useRef(null);
+  const [quakeData, setQuakeData] = useState([]);
 
+  // Setup the Mapbox map
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/streets-v11', // Map style
-      center: [-74.5, 40], // Initial map center [lng, lat]
-      zoom: 9, // Initial map zoom level
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [-74.5, 40],
+      zoom: 9,
     });
 
-    return () => map.remove(); // Clean up map on component unmount
+    return () => map.remove();
+  }, []);
+
+  // Fetch earthquake data
+  useEffect(() => {
+    fetch('https://localhost:44302/QuakeData')
+      .then((response) => response.json())
+      .then((data) => setQuakeData(data))
+      .catch((error) => console.error('Error fetching quake data:', error));
   }, []);
 
   return (
@@ -26,14 +37,51 @@ function App() {
         <div ref={mapContainer} className="map-container"></div>
       </div>
 
-      {/* First Quadrant: Green, Yellow, Purple, Orange */}
-      <div className="quadrant green">Green</div>
+      {/* First Quadrant: Seismograph */}
+      <div className="quadrant green">
+        <div className="seismograph-wrapper">
+          <SeismographChart />
+        </div>
+      </div>
       <div className="quadrant yellow">Yellow</div>
       <div className="quadrant purple">Purple</div>
       <div className="quadrant orange">Orange</div>
 
-      {/* Third Quadrant */}
-      <div className="quadrant blue">Blue</div>
+      {/* Third Quadrant: Earthquake Table */}
+      <div className="quadrant blue">
+        <div className="table-wrapper">
+          <table className="earthquake-table">
+            <thead>
+              <tr>
+                <th>Magnitude</th>
+                <th>Depth</th>
+                <th>Place</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Time</th>
+                <th>Modified Mercalli Intensity</th>
+                <th>AzimGap</th>
+                <th>Tsunami</th>
+              </tr>
+            </thead>
+            <tbody>
+              {quakeData.map((quake, index) => (
+                <tr key={index}>
+                  <td>{quake.mag}</td>
+                  <td>{quake.depth} km</td>
+                  <td>{quake.place}</td>
+                  <td>{quake.lat}°N</td>
+                  <td>{quake.lon}°W</td>
+                  <td>{new Date(quake.time).toLocaleString()}</td>
+                  <td>{quake.mmi ?? 'N/A'}</td>
+                  <td>{quake.azim}</td>
+                  <td>{quake.tsunami === 1 ? 'Yes' : 'No'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
 
       {/* Fourth Quadrant */}
       <div className="quadrant pink">Pink</div>

@@ -28,14 +28,14 @@
         {
             public double mag { get; set; }
             public string place { get; set; }
-            public object time { get; set; }
+            public Double time { get; set; }
             public object updated { get; set; }
             public object tz { get; set; }
             public string url { get; set; }
             public string detail { get; set; }
             public object felt { get; set; }
             public object cdi { get; set; }
-            public object mmi { get; set; }
+            public double? mmi { get; set; }
             public object alert { get; set; }
             public string status { get; set; }
             public int tsunami { get; set; }

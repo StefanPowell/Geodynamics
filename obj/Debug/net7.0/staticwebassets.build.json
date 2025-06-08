@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "Eo+u9ZD9KxAjvDvuE/7kuHxxm+RfwfCcuSa+kpcmIwM=",
+  "Hash": "0sS0Cv8M8f+f8AdiVSQvVDJN19jLxHsfZ7zvWeYc/CE=",
   "Source": "EarthQuake",
   "BasePath": "_content/EarthQuake",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

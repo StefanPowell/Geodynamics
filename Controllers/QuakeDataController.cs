@@ -25,14 +25,21 @@ namespace EarthQuake.Controllers
         [HttpPost("daterange")]
         public void PostQuakesBetweenDate(DateTime startdate, DateTime enddate)
         {
-            quakeAPI.SendQuery(DateOnly.FromDateTime(startdate), DateOnly.FromDateTime(enddate));
+            //quakeAPI.SendQuery(DateOnly.FromDateTime(startdate), DateOnly.FromDateTime(enddate));
         }
 
         [HttpGet(Name = "GetQuakes")]
-        public async Task<List<Feature>> GetQuakeData()
+        public async Task<List<EarthQuakeView>> GetQuakeData()
         {
-            List<Feature> test = quakeAPI.GetQuakesQuery(DateOnly.FromDateTime(DateTime.Now.AddDays(-7)), DateOnly.FromDateTime(DateTime.Now.AddDays(-1)));
-            return test;
+            //only trying to put 12 on the front screen
+            List<Feature> test = await quakeAPI.GetQuakesQuery();
+            test = test.Take(12).ToList();
+
+            List<EarthQuakeView> dataforfrontView = new List<EarthQuakeView>();
+            foreach (Feature feature in test) {
+                dataforfrontView.Add(new EarthQuakeView(feature));
+            }
+            return dataforfrontView;
         }
     }
 }

@@ -21,12 +21,16 @@
   <ItemGroup>
     <Folder Include="Computations\Geochemistry\" />
     <Folder Include="Computations\GeoDynamics\" />
-    <Folder Include="Computations\Geophysics\" />
+    <Folder Include="Computations\Geophysics\Mantle Convection\" />
+    <Folder Include="Computations\Geophysics\Plate Tectonics\Continental drift\" />
+    <Folder Include="Computations\Geophysics\Plate Tectonics\Mountain building\" />
+    <Folder Include="Computations\Geophysics\Plate Tectonics\Subduction\" />
+    <Folder Include="Computations\Geophysics\Plate Tectonics\Seafloor spreading\" />
     <Folder Include="Computations\Geostatistics\" />
+    <Folder Include="Computations\Heat Transfer\" />
     <Folder Include="Computations\Volcanology\" />
     <Folder Include="Computations\Oceanography\" />
     <Folder Include="Computations\Seismology\Global Stresses\" />
-    <Folder Include="Computations\Seismology\" />
     <Folder Include="Computations\Seismology\Plate Tectonics\" />
     <Folder Include="Computations\Seismology\FaultLine\" />
     <Folder Include="Computations\Seismology\EarthMovements\" />

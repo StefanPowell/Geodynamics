@@ -6,3 +6,8 @@
 *.bin
 *.suo
 *.dtbcache.v2
+
+# Ignore build output and Visual Studio folders
+bin/
+obj/
+.vs/

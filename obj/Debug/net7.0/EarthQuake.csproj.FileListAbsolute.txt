@@ -69,7 +69,6 @@ C:\Users\powel\Dropbox\Geodynamics\obj\Debug\net7.0\staticwebassets.pack.json
 C:\Users\powel\Dropbox\Geodynamics\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\powel\Dropbox\Geodynamics\obj\Debug\net7.0\staticwebassets.development.json
 C:\Users\powel\Dropbox\Geodynamics\obj\Debug\net7.0\scopedcss\bundle\EarthQuake.styles.css
-C:\Users\powel\Dropbox\Geodynamics\obj\Debug\net7.0\EarthQuake.csproj.CopyComplete
 C:\Users\powel\Dropbox\Geodynamics\obj\Debug\net7.0\EarthQuake.dll
 C:\Users\powel\Dropbox\Geodynamics\obj\Debug\net7.0\refint\EarthQuake.dll
 C:\Users\powel\Dropbox\Geodynamics\obj\Debug\net7.0\EarthQuake.pdb
@@ -80,3 +79,9 @@ C:\Users\powel\Dropbox\Geodynamics\bin\Debug\net7.0\quakewebapplication\package.
 C:\Users\powel\Dropbox\Geodynamics\bin\Debug\net7.0\quakewebapplication\public\manifest.json
 C:\Users\powel\Dropbox\Geodynamics\bin\Debug\net7.0\quakewebapplication\build\asset-manifest.json
 C:\Users\powel\Dropbox\Geodynamics\bin\Debug\net7.0\quakewebapplication\build\manifest.json
+C:\Users\powel\Dropbox\Geodynamics\bin\Debug\net7.0\EarthQuake.staticwebassets.endpoints.json
+C:\Users\powel\Dropbox\Geodynamics\obj\Debug\net7.0\EarthQuake.sourcelink.json
+C:\Users\powel\Dropbox\Geodynamics\obj\Debug\net7.0\staticwebassets.build.endpoints.json
+C:\Users\powel\Dropbox\Geodynamics\obj\Debug\net7.0\staticwebassets\msbuild.EarthQuake.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\powel\Dropbox\Geodynamics\obj\Debug\net7.0\staticwebassets.upToDateCheck.txt
+C:\Users\powel\Dropbox\Geodynamics\obj\Debug\net7.0\EarthQuake.csproj.Up2Date

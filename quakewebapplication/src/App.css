@@ -20,7 +20,7 @@
 .map-container {
   width: 100%;
   height: 100%;
-  border: 2px solid black; /* Optional border for visibility */
+  border: 2px solid black;
 }
 
 /* First Quadrant */
@@ -42,39 +42,66 @@
 .green {
   background-color: green;
   top: 0;
-  left: 50%; /* Adjusted for top-right quadrant */
+  left: 50%;
 }
 
 .yellow {
   background-color: yellow;
   color: black;
   top: 0;
-  left: 75%; /* Adjusted for top-right quadrant */
+  left: 75%;
 }
 
 .purple {
   background-color: purple;
   top: 25%;
-  left: 50%; /* Adjusted for top-right quadrant */
+  left: 50%;
 }
 
 .orange {
   background-color: orange;
   top: 25%;
-  left: 75%; /* Adjusted for top-right quadrant */
+  left: 75%;
 }
 
 /* Third Quadrant */
 .blue {
-  background-color: blue;
   grid-column: 1;
   grid-row: 2;
+  background-color: #007BFF;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+/* Scrollable container */
+.table-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 8px;
+}
+
+/* Table styling */
+.earthquake-table {
+  width: max-content; /* Allows table to shrink to content, not force container to stretch */
+  border-collapse: collapse;
+  color: black;
+}
+
+.earthquake-table th,
+.earthquake-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  white-space: nowrap;
 }
 
 /* Fourth Quadrant */
@@ -88,4 +115,24 @@
   font-size: 1.5rem;
   font-weight: bold;
   color: white;
+}
+.quadrant.green {
+  background-color: #001a00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.quadrant.green canvas {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 100%; /* optional control over height */
+}
+.seismograph-wrapper{
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  background-color: white;
+  
 }

@@ -43,9 +43,19 @@ namespace EarthQuake.USGS
             
         }
 
-        public List<Feature> GetQuakesQuery(DateOnly startdate, DateOnly enddate)
+        public async Task <List<Feature>> GetQuakesQuery()
         {
-            return _context.GetRepodatabase();
+            //get all the data in a date range and return teh values
+                using (HttpClient client = new HttpClient())
+                {
+                    string url = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2014-01-01&endtime=2014-01-02";
+                    HttpResponseMessage response = await client.GetAsync(url);
+                    response.EnsureSuccessStatusCode();
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    Root EarthQuakeDataRoot = JsonConvert.DeserializeObject<Root>(responseBody);
+                    List<Feature> featurelist = EarthQuakeDataRoot.features;
+                    return featurelist;
+                }
         }
     }
 }
