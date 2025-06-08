@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Globalization;
 using Microsoft.AspNetCore.Mvc;
 using EarthQuake.Repository;
+using EarthQuake.Computations.Seismology.Models;
 
 namespace EarthQuake.USGS
 {
@@ -57,5 +58,78 @@ namespace EarthQuake.USGS
                     return featurelist;
                 }
         }
+
+        public async Task<List<StationData>> GetStations(int totalstations = 0, int maxradius = 0)
+        {
+            //use double latitude, double longitude
+            using (HttpClient client = new HttpClient())
+            {
+                string url = "https://service.iris.edu/fdsnws/station/1/query?lat=59.097&lon=-159.097&maxradius=5&level=station&format=text";
+                HttpResponseMessage response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+                var stationList = new List<StationData>();
+
+                string[] lines = responseBody.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+
+                // Skip the header
+                for (int i = 1; i < lines.Length; i++)
+                {
+                    string[] parts = lines[i].Split('|');
+                    if (parts.Length < 8) continue;
+
+                    stationList.Add(new StationData
+                    {
+                        network = parts[0],
+                        station = parts[1],
+                        latitude = double.Parse(parts[2], CultureInfo.InvariantCulture),
+                        longitude = double.Parse(parts[3], CultureInfo.InvariantCulture),
+                        elevation = double.Parse(parts[4], CultureInfo.InvariantCulture),
+                        sitename = parts[5],
+                        starttime = parts[6],
+                        endtime = parts[7]
+                    });
+                }
+
+                return stationList;
+            }
+        }
+
+        public async Task<List<miniSEED>> GetWaveFormData(ServiceIrisEduData data = null)
+        {
+            //use double latitude, double longitude
+            using (HttpClient client = new HttpClient())
+            {
+                string url = "https://service.iris.edu/fdsnws/dataselect/1/query?net=IU&sta=ANMO&loc=00&cha=BHZ&starttime=2010-02-27T06:30:00&endtime=2010-02-27T06:45:00&format=geocsv.inline";
+                HttpResponseMessage response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+                List<miniSEED> WaveFormData = new List<miniSEED>();
+
+                string[] lines = responseBody.Split('\n');
+
+                foreach (var line in lines)
+                {
+                    if (string.IsNullOrWhiteSpace(line) || line.StartsWith("#") || line.StartsWith("Time"))
+                        continue;
+
+                    string[] parts = line.Split(',');
+
+                    if (parts.Length != 2)
+                        continue;
+
+                    if (DateTime.TryParse(parts[0], null, DateTimeStyles.AdjustToUniversal, out DateTime time) &&
+                        double.TryParse(parts[1], out double amplitude))
+                    {
+                        WaveFormData.Add(new miniSEED
+                        {
+                            time = time,
+                            amplitude = amplitude
+                        });
+                    }
+                }
+                return WaveFormData;
+            }
+        }   
     }
 }

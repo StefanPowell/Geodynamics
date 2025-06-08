@@ -9,15 +9,17 @@ namespace EarthQuake.Controllers
     [Route("[controller]")]
     public class SeismicDataController : ControllerBase
     {
+        API quakeAPI = new API();
         public SeismicDataController()
         {
             
         }
 
         [HttpGet(Name = "WaveFormData")]
-        public miniSEED GetQuakeData(ServiceIrisEduDataSelect data)
+        public async Task<List<miniSEED>> GetWaveFormData()
         {
-            return new miniSEED();
+            List<miniSEED> waveformdata = await quakeAPI.GetWaveFormData();
+            return waveformdata;
         }
     }
 }

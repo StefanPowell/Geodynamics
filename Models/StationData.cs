@@ -2,13 +2,13 @@
 {
     public class StationData
     {
-        public string network;
-        public string station;
-        public double latitude;
-        public double longitude;
-        public double elevation;
-        public string sitename;
-        public DateTime starttime;
-        public DateTime endtime;
+        public string network {get; set;}
+        public string station { get; set; }
+        public double latitude { get; set; }
+        public double longitude { get; set; }
+        public double elevation { get; set; }
+        public string sitename { get; set; }
+        public string starttime { get; set; }
+        public string endtime { get; set; }
     }
 }
