@@ -9,6 +9,11 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3RlZmFuMzc1IiwiYSI6ImNtNTdvM3dxdDNocjMybXE3N
 function App() {
   const mapContainer = useRef(null);
   const [quakeData, setQuakeData] = useState([]);
+  const handleCellClick = (latitide, longitude) => {
+    //do a get request on an api
+    console.log("Cell clicked:", latitide, longitude);
+  };
+
 
   // Setup the Mapbox map
   useEffect(() => {
@@ -66,7 +71,7 @@ function App() {
             </thead>
             <tbody>
               {quakeData.map((quake, index) => (
-                <tr key={index}>
+                <tr key={index} onClick={() => handleCellClick(quake.lat, quake.lon)}>
                   <td>{quake.mag}</td>
                   <td>{quake.depth} km</td>
                   <td>{quake.place}</td>
