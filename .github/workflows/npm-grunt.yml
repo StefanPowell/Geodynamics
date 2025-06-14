@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - quakewebapplication/**
+      - .github/workflows/npm-grunt.yml
     branches:
       - main
       - develop
@@ -62,7 +63,7 @@ jobs:
 
     # Step 7: Optionally upload build artifacts (for deployment or debugging)
     - name: Upload build artifact (optional)
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: build
         path: ./quakewebapplication/build

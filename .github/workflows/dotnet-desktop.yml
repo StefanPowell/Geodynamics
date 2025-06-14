@@ -117,7 +117,7 @@ jobs:
     #   shell: pwsh
 
     - name: Upload Build Artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4.6.2
       with:
         name: Application Build
         path: EarthQuake.App\bin\${{ matrix.configuration }}\ # Path to .exe or compiled output
