@@ -49,7 +49,7 @@ namespace EarthQuake.USGS
             //get all the data in a date range and return teh values
                 using (HttpClient client = new HttpClient())
                 {
-                    string url = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2014-01-01&endtime=2014-01-02";
+                    string url = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2025-06-13&endtime=2025-06-14";
                     HttpResponseMessage response = await client.GetAsync(url);
                     response.EnsureSuccessStatusCode();
                     string responseBody = await response.Content.ReadAsStringAsync();
@@ -59,12 +59,12 @@ namespace EarthQuake.USGS
                 }
         }
 
-        public async Task<List<StationData>> GetStations(int totalstations = 0, int maxradius = 0)
+        public async Task<List<StationData>> GetStations(double latitude, double longitude, int totalstations, int maxradius)
         {
             //use double latitude, double longitude
             using (HttpClient client = new HttpClient())
             {
-                string url = "https://service.iris.edu/fdsnws/station/1/query?lat=59.097&lon=-159.097&maxradius=5&level=station&format=text";
+                string url = $"https://service.iris.edu/fdsnws/station/1/query?lat={latitude}&lon={longitude}&maxradius={maxradius}&level=station&format=text";
                 HttpResponseMessage response = await client.GetAsync(url);
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();

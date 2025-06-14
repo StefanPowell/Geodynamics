@@ -9,13 +9,31 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic3RlZmFuMzc1IiwiYSI6ImNtNTdvM3dxdDNocjMybXE3N
 function App() {
   const mapContainer = useRef(null);
   const [quakeData, setQuakeData] = useState([]);
-  const handleCellClick = (latitide, longitude) => {
-    //do a get request on an api
-    console.log("Cell clicked:", latitide, longitude);
+
+  // ✅ Corrected function
+  const handleCellClick = (latitude, longitude) => {
+    const maxradius = 10; // ✅ Declared properly
+    const url = `https://localhost:44302/Station?latitude=${latitude}&longitude=${longitude}&maxradius=${maxradius}`;
+
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json(); 
+      })
+      .then((result) => {
+        console.log(result);
+        setQuakeData([result]); // Wrap in array
+      })
+      .catch((error) => {
+        console.error('Fetch error:', error);
+      });
+
+    console.log("Cell clicked:", latitude, longitude); // ✅ Moved inside handler
   };
 
-
-  // Setup the Mapbox map
+  // ✅ Setup Mapbox map
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainer.current,
@@ -27,7 +45,7 @@ function App() {
     return () => map.remove();
   }, []);
 
-  // Fetch earthquake data
+  // ✅ Fetch quake data initially
   useEffect(() => {
     fetch('https://localhost:44302/QuakeData')
       .then((response) => response.json())
@@ -48,6 +66,7 @@ function App() {
           <SeismographChart />
         </div>
       </div>
+
       <div className="quadrant yellow">Yellow</div>
       <div className="quadrant purple">Purple</div>
       <div className="quadrant orange">Orange</div>

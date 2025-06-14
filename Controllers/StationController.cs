@@ -16,11 +16,10 @@ namespace EarthQuake.Controllers
         }
 
         [HttpGet(Name = "NearbyStations")]
-        public async Task <List<StationData>> GetNearbyStations(int stationsneeded = 0)
+        public async Task <StationData> GetNearbyStations(double latitude, double longitude, int stationsneeded = 0, int maxradius=1)
         {
-            //return new List<StationData>();
-            List<StationData> allstations = await quakeAPI.GetStations();
-            return allstations;
+            List<StationData> allstations = await quakeAPI.GetStations(latitude, longitude, stationsneeded, maxradius);
+            return allstations.First();
         }
     }
 }

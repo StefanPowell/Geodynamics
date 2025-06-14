@@ -68,7 +68,7 @@
 .blue {
   grid-column: 1;
   grid-row: 2;
-  background-color: #007BFF;
+  border:1px solid whitesmoke;
   display: flex;
   justify-content: center;
   align-items: center;
