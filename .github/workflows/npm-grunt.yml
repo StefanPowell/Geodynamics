@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - quakewebapplication/**
+      - .github/workflows/npm-grunt.yml
     branches:
       - main
       - develop
@@ -19,11 +20,11 @@ jobs:
     steps:
     # Step 1: Checkout the repository
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v3
 
     # Step 2: Set up Node.js
     - name: Set up Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v3
       with:
         node-version: '16'  # You can specify the Node.js version you need
 
