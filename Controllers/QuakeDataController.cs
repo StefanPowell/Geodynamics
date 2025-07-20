@@ -1,5 +1,6 @@
 using EarthQuake.Models;
 using EarthQuake.USGS;
+using EarthQuake.USGS.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EarthQuake.Controllers
@@ -9,17 +10,18 @@ namespace EarthQuake.Controllers
     public class QuakeDataController : ControllerBase
     {
         private readonly ILogger<QuakeDataController> _logger;
-        API quakeAPI = new API();
+        private readonly IUSGSQUAKEAPI _api;
 
-        public QuakeDataController(ILogger<QuakeDataController> logger)
+        public QuakeDataController(ILogger<QuakeDataController> logger, IUSGSQUAKEAPI api)
         {
             _logger = logger;
+            _api = api;
         }
 
         [HttpPost("today")]
         public void PostTodayQuakes()
         {
-            quakeAPI.SendQuery(DateOnly.FromDateTime(DateTime.Now), DateOnly.FromDateTime(DateTime.Now.AddDays(1)));
+            _api.SendQuery(DateOnly.FromDateTime(DateTime.Now), DateOnly.FromDateTime(DateTime.Now.AddDays(1)));
         }
 
         [HttpPost("daterange")]
@@ -32,7 +34,7 @@ namespace EarthQuake.Controllers
         public async Task<List<EarthQuakeView>> GetQuakeData()
         {
             //only trying to put 12 on the front screen
-            List<Feature> test = await quakeAPI.GetQuakesQuery();
+            List<Feature> test = await _api.GetQuakesQuery();
             test = test.Take(12).ToList();
 
             List<EarthQuakeView> dataforfrontView = new List<EarthQuakeView>();

@@ -3,16 +3,25 @@ using System.Runtime.InteropServices;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using EarthQuake.Computations;
 using EarthQuake.Interface;
+using Microsoft.Data.SqlClient;
+using Dapper;
 
 namespace EarthQuake.Repository
 {
     public class ApplicationRepoContext : IApplicationRepoContext
     {
         private List<Feature> _repodatabase;
+        private readonly string _connectionString;
 
-        public ApplicationRepoContext()
+        public ApplicationRepoContext(IConfiguration config)
         {
             _repodatabase = new List<Feature>() ?? throw new ArgumentNullException(nameof(_repodatabase));
+            _connectionString = config.GetConnectionString("DefaultConnection");
+        }
+
+        public SqlConnection CreateConnection()
+        {
+            return new SqlConnection(_connectionString);
         }
 
         public void SaveData(List<Feature> data) { 
@@ -45,5 +54,20 @@ namespace EarthQuake.Repository
             DateTime epoch = new DateTime(1970, 1, 1);
             return (long)(date.ToDateTime(TimeOnly.MinValue) - epoch).TotalSeconds;
         }
+
+        //save data to databaase
+        public async void SaveEarthQuakeFeatureListAsync(List<Feature> quakes)
+        {
+            const string sql = @"
+                INSERT INTO faults (name, type, dip, last_movement)
+                VALUES (@Name, @Type, @Dip, @LastMovement)";
+
+            using var connection = CreateConnection();
+            await connection.ExecuteAsync(sql, quakes);
+        }
+
+        //delete data from database
+
+        //get between dates data from database
     }
 }

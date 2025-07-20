@@ -7,19 +7,23 @@ using System.Globalization;
 using Microsoft.AspNetCore.Mvc;
 using EarthQuake.Repository;
 using EarthQuake.Computations.Seismology.Models;
+using EarthQuake.USGS.Interfaces;
+using EarthQuake.Interface;
 
 namespace EarthQuake.USGS
 {
     //run api daily
     //on api daily run save all earthquake data in database in AWS cloud
-    public class API
+    public class USGSQUAKEAPI : IUSGSQUAKEAPI
     {
-        private ApplicationRepoContext _context;
+        private IApplicationRepoContext _repo;
 
-        public API()
+        public USGSQUAKEAPI(IApplicationRepoContext repo)
         {
-            _context = new ApplicationRepoContext() ?? throw new ArgumentNullException(nameof(_context));
+           _repo = repo ?? throw new ArgumentNullException(nameof(repo));
         }
+
+
 
         public async void SendQuery(DateOnly starttime, DateOnly endtime)
         {
@@ -33,12 +37,13 @@ namespace EarthQuake.USGS
                     string responseBody = await response.Content.ReadAsStringAsync();
                     Root EarthQuakeDataRoot = JsonConvert.DeserializeObject<Root>(responseBody);
                     List<Feature> featurelist = EarthQuakeDataRoot.features;
-                    _context.SaveData(featurelist);
+                    _repo.SaveData(featurelist);
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
+                //I need a logger, curently will use internal logger -- move to some other logger later
                 //Build Error Catcher to populate all errors
             }
             

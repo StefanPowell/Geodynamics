@@ -1,5 +1,6 @@
 ﻿using EarthQuake.Models;
 using EarthQuake.USGS;
+using EarthQuake.USGS.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EarthQuake.Controllers
@@ -8,17 +9,17 @@ namespace EarthQuake.Controllers
     [Route("[controller]")]
     public class StationController : ControllerBase
     {
-        API quakeAPI = new API();
+        private readonly IUSGSQUAKEAPI  _api;
 
-        public StationController()
+        public StationController(IUSGSQUAKEAPI api)
         {
-            
+            _api = api;
         }
 
         [HttpGet(Name = "NearbyStations")]
         public async Task <StationData> GetNearbyStations(double latitude, double longitude, int stationsneeded = 0, int maxradius=1)
         {
-            List<StationData> allstations = await quakeAPI.GetStations(latitude, longitude, stationsneeded, maxradius);
+            List<StationData> allstations = await _api.GetStations(latitude, longitude, stationsneeded, maxradius);
             return allstations.First();
         }
     }
