@@ -5,6 +5,7 @@ using EarthQuake.Computations;
 using EarthQuake.Interface;
 using Microsoft.Data.SqlClient;
 using Dapper;
+using System.Data;
 
 namespace EarthQuake.Repository
 {
@@ -15,8 +16,9 @@ namespace EarthQuake.Repository
 
         public ApplicationRepoContext(IConfiguration config)
         {
-            _repodatabase = new List<Feature>() ?? throw new ArgumentNullException(nameof(_repodatabase));
-            _connectionString = config.GetConnectionString("DefaultConnection");
+            _repodatabase = new List<Feature>();
+            _connectionString = config.GetConnectionString("DefaultConnection")
+                                ?? throw new ArgumentNullException(nameof(config), "Connection string not found.");
         }
 
         public SqlConnection CreateConnection()
@@ -24,12 +26,42 @@ namespace EarthQuake.Repository
             return new SqlConnection(_connectionString);
         }
 
-        public void SaveData(List<Feature> data) { 
-            foreach (var feature in data)
+        public void SaveData(List<Feature> data)
+        {
+            try
             {
-                _repodatabase.Add(feature);
+                using (var connection = CreateConnection())
+                {
+                    using (var cmd = new SqlCommand("quake.InsertFeatures", connection))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        var table = new DataTable();
+                        table.Columns.Add("Type", typeof(string));
+                        table.Columns.Add("PropertiesId", typeof(int));
+                        table.Columns.Add("GeoId", typeof(int));
+                        table.Columns.Add("Id", typeof(string));
+
+                        var tableParam = new SqlParameter("@Features", SqlDbType.Structured)
+                        {
+                            TypeName = "FeatureType", // matches your SQL table type
+                            Value = table      // your DataTable matching FeatureType
+                        };
+
+                        cmd.Parameters.Add(tableParam);
+
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
             }
         }
+
 
         public void DeleteData(Feature datapoint) {
             _repodatabase.Remove(datapoint);

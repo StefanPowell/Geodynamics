@@ -23,8 +23,6 @@ namespace EarthQuake.USGS
            _repo = repo ?? throw new ArgumentNullException(nameof(repo));
         }
 
-
-
         public async void SendQuery(DateOnly starttime, DateOnly endtime)
         {
             try

@@ -23,16 +23,10 @@ builder.Services.AddSingleton<IUSGSQUAKEAPI, USGSQUAKEAPI>(provider =>
     return new USGSQUAKEAPI(applicationrepo);
 });
 
-
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-//builder.Services.
-builder.Services.AddSingleton<IApplicationRepoContext, ApplicationRepoContext>();
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

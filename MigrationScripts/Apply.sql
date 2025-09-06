@@ -1,6 +1,11 @@
 CREATE DATABASE EarthQuake;
+GO
 
 USE EarthQuake;
+GO
+
+CREATE SCHEMA quake;
+GO
 
 -- Create the main faults table
 CREATE TABLE faults (
@@ -10,6 +15,7 @@ CREATE TABLE faults (
     dip INT,
     last_movement DATE
 );
+GO
 
 -- Create the fault_coordinates table
 CREATE TABLE fault_coordinates (
@@ -20,6 +26,7 @@ CREATE TABLE fault_coordinates (
     point_order INT NOT NULL,
     FOREIGN KEY (fault_id) REFERENCES faults(id) ON DELETE CASCADE
 );
+GO
 
 CREATE TABLE Metadata (
     MetadataId INT IDENTITY(1,1) PRIMARY KEY,
@@ -118,10 +125,22 @@ CREATE TYPE Coordinates AS TABLE
     Coordinate FLOAT NOT NULL      
 );
 
-CREATE TYPE Feature AS TABLE
+CREATE TYPE FeatureType AS TABLE
 (
     Type NVARCHAR(100) NOT NULL,
     PropertiesId INT NOT NULL,
     GeoId INT NOT NULL,
     Id NVARCHAR(100) NOT NULL
 );
+GO
+
+--stored procedures
+CREATE PROCEDURE quake.InsertFeatures
+    @Feature FeatureType READONLY
+AS
+BEGIN
+    INSERT INTO dbo.Feature (type, PropertiesId, GeometryId, id)
+    SELECT Type, PropertiesId, GeoId, Id
+    FROM @Feature;
+END;
+GO
