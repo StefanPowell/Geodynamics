@@ -1,5 +1,5 @@
 using EarthQuake.Models;
-using EarthQuake.USGS;
+using EarthQuake.Persistence.Models;
 using EarthQuake.USGS.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,27 +21,51 @@ namespace EarthQuake.Controllers
         [HttpPost("today")]
         public void PostTodayQuakes()
         {
-            _api.SendQuery(DateOnly.FromDateTime(DateTime.Now), DateOnly.FromDateTime(DateTime.Now.AddDays(1)));
+            try
+            {
+                _api.SendQuery(DateOnly.FromDateTime(DateTime.Now), DateOnly.FromDateTime(DateTime.Now.AddDays(1)));
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+            }
+            
         }
 
         [HttpPost("daterange")]
         public void PostQuakesBetweenDate(DateTime startdate, DateTime enddate)
         {
-            //quakeAPI.SendQuery(DateOnly.FromDateTime(startdate), DateOnly.FromDateTime(enddate));
+            try
+            {
+                _api.SendQuery(DateOnly.FromDateTime(startdate), DateOnly.FromDateTime(enddate));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+            }
         }
 
         [HttpGet(Name = "GetQuakes")]
-        public async Task<List<EarthQuakeView>> GetQuakeData()
+        public async Task<ActionResult<List<EarthQuakeView>>> GetQuakeData(int valuesToShow)
         {
-            //only trying to put 12 on the front screen
-            List<Feature> test = await _api.GetQuakesQuery();
-            test = test.Take(12).ToList();
+            try
+            {
+                List<Feature> test = await _api.GetQuakesQuery();
+                test = test.Take(valuesToShow).ToList();
 
-            List<EarthQuakeView> dataforfrontView = new List<EarthQuakeView>();
-            foreach (Feature feature in test) {
-                dataforfrontView.Add(new EarthQuakeView(feature));
+                List<EarthQuakeView> dataforfrontView = new List<EarthQuakeView>();
+                foreach (Feature feature in test)
+                {
+                    dataforfrontView.Add(new EarthQuakeView(feature));
+                }
+                return StatusCode(StatusCodes.Status200OK,
+                                    dataforfrontView);
             }
-            return dataforfrontView;
+            catch (Exception ex) 
+            {
+                return StatusCode(StatusCodes.Status400BadRequest,
+                                    $"An error occurred while processing the request: {ex.Message}");
+            }
         }
     }
 }

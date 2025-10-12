@@ -1,5 +1,6 @@
 ﻿using EarthQuake.Computations.Seismology.Models;
 using EarthQuake.Models;
+using EarthQuake.Persistence.Models;
 
 namespace EarthQuake.USGS.Interfaces
 {

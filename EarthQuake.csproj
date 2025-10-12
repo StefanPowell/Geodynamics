@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
+    <LangVersion>12.0</LangVersion>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>251d6a4d-e087-44cf-89c1-bdc64a35489d</UserSecretsId>
@@ -10,14 +11,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Services\**" />
+    <Content Remove="Services\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <None Remove="Services\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.66" />
     <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.13" />
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="4.0.1" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.2" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Testcontainers" Version="4.7.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,9 +43,12 @@
     <Folder Include="Computations\Oceanography\" />
     <Folder Include="Computations\Seismology\Plate Tectonics\" />
     <Folder Include="Computations\Seismology\FaultLine\" />
-    <Folder Include="MigrationScripts\" />
     <Folder Include="DataProcessing\" />
-    <Folder Include="Services\" />
+    <Folder Include="MigrationScripts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EarthQuake.Persistence\EarthQuake.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

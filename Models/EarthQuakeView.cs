@@ -1,4 +1,6 @@
-﻿namespace EarthQuake.Models
+﻿using EarthQuake.Persistence.Models;
+
+namespace EarthQuake.Models
 {
     public class EarthQuakeView
     {
