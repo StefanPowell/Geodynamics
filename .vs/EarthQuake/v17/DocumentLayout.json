@@ -1,0 +1,719 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\powel\\Dropbox\\Geodynamics\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\repository\\applicationrepocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:repository\\applicationrepocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\powel\\Dropbox\\Geodynamics\\obj\\Debug\\net7.0\\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\Debug\\net7.0\\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\powel\\Dropbox\\Geodynamics\\obj\\Debug\\net7.0\\EarthQuake.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\Debug\\net7.0\\EarthQuake.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\earthquaketests\\obj\\debug\\net7.0\\earthquaketests.globalusings.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:earthquaketests\\obj\\debug\\net7.0\\earthquaketests.globalusings.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\interface\\iapplicationrepocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:interface\\iapplicationrepocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\usgs\\usgsquakeapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:usgs\\usgsquakeapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\migrationscripts\\apply.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:migrationscripts\\apply.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\controllers\\quakedatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:controllers\\quakedatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\models\\querydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:models\\querydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\controllers\\faultscontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:controllers\\faultscontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\repository\\faultrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:repository\\faultrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\models\\earthquakefeature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:models\\earthquakefeature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\models\\earthquakeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:models\\earthquakeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\models\\fault.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:models\\fault.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\models\\stationdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:models\\stationdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\computations\\mathematics\\linearalgebra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:computations\\mathematics\\linearalgebra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\computations\\mathematics\\simplefunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:computations\\mathematics\\simplefunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\computations\\mathematics\\calculus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:computations\\mathematics\\calculus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\earthquake.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:earthquake.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\.dockerignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:.dockerignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\computations\\seismology\\global stresses\\faultstress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:computations\\seismology\\global stresses\\faultstress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\controllers\\stationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:controllers\\stationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\controllers\\seismicdatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:controllers\\seismicdatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\modelling\\okadamodelling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:modelling\\okadamodelling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\modelling\\tsunamimodelling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:modelling\\tsunamimodelling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\computations\\geomagnetism\\geomagnetism.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:computations\\geomagnetism\\geomagnetism.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\modelling\\swavemodelling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:modelling\\swavemodelling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\modelling\\pwavemodelling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:modelling\\pwavemodelling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\predictablity\\predictable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:predictablity\\predictable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\computations\\seismology\\earthmovements\\platemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:computations\\seismology\\earthmovements\\platemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\computations\\seismology\\earthmovements\\repository\\platemovementrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:computations\\seismology\\earthmovements\\repository\\platemovementrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\computations\\seismology\\earthmovements\\repository\\interface\\iplatemovementrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:computations\\seismology\\earthmovements\\repository\\interface\\iplatemovementrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\computations\\seismology\\global stresses\\repository\\faultstressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:computations\\seismology\\global stresses\\repository\\faultstressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\computations\\seismology\\global stresses\\repository\\interface\\ifaultstressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:computations\\seismology\\global stresses\\repository\\interface\\ifaultstressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\migrationscripts\\rollback.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:migrationscripts\\rollback.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|c:\\users\\powel\\dropbox\\geodynamics\\computations\\seismology\\models\\serviceirisedudata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}|EarthQuake.csproj|solutionrelative:computations\\seismology\\models\\serviceirisedudata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 14,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f53-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{34c7837f-3b3a-449c-bdf0-bdad86cbaf4a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": ".NETCoreApp,Version=v7.0.AssemblyAttributes.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\obj\\Debug\\net7.0\\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs",
+              "RelativeDocumentMoniker": "obj\\Debug\\net7.0\\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\obj\\Debug\\net7.0\\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs",
+              "RelativeToolTip": "obj\\Debug\\net7.0\\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T19:38:46.702Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EarthQuake.AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\obj\\Debug\\net7.0\\EarthQuake.AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "obj\\Debug\\net7.0\\EarthQuake.AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\obj\\Debug\\net7.0\\EarthQuake.AssemblyInfo.cs",
+              "RelativeToolTip": "obj\\Debug\\net7.0\\EarthQuake.AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T19:37:26.897Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EarthQuakeTests.GlobalUsings.g.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\EarthQuakeTests\\obj\\Debug\\net7.0\\EarthQuakeTests.GlobalUsings.g.cs",
+              "RelativeDocumentMoniker": "EarthQuakeTests\\obj\\Debug\\net7.0\\EarthQuakeTests.GlobalUsings.g.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\EarthQuakeTests\\obj\\Debug\\net7.0\\EarthQuakeTests.GlobalUsings.g.cs",
+              "RelativeToolTip": "EarthQuakeTests\\obj\\Debug\\net7.0\\EarthQuakeTests.GlobalUsings.g.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T19:24:46.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ApplicationRepoContext.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Repository\\ApplicationRepoContext.cs",
+              "RelativeDocumentMoniker": "Repository\\ApplicationRepoContext.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Repository\\ApplicationRepoContext.cs",
+              "RelativeToolTip": "Repository\\ApplicationRepoContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T19:22:32.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "USGSQUAKEAPI.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\USGS\\USGSQUAKEAPI.cs",
+              "RelativeDocumentMoniker": "USGS\\USGSQUAKEAPI.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\USGS\\USGSQUAKEAPI.cs",
+              "RelativeToolTip": "USGS\\USGSQUAKEAPI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-30T23:52:44.419Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IApplicationRepoContext.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Interface\\IApplicationRepoContext.cs",
+              "RelativeDocumentMoniker": "Interface\\IApplicationRepoContext.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Interface\\IApplicationRepoContext.cs",
+              "RelativeToolTip": "Interface\\IApplicationRepoContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T13:21:25.185Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "QuakeDataController.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Controllers\\QuakeDataController.cs",
+              "RelativeDocumentMoniker": "Controllers\\QuakeDataController.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Controllers\\QuakeDataController.cs",
+              "RelativeToolTip": "Controllers\\QuakeDataController.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAApwBcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T19:21:24.723Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAC1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-20T18:39:43.797Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Apply.sql",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\MigrationScripts\\Apply.sql",
+              "RelativeDocumentMoniker": "MigrationScripts\\Apply.sql",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\MigrationScripts\\Apply.sql",
+              "RelativeToolTip": "MigrationScripts\\Apply.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-07-10T08:30:07.619Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAiwB8AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-30T23:52:36.03Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "QueryData.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Models\\QueryData.cs",
+              "RelativeDocumentMoniker": "Models\\QueryData.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Models\\QueryData.cs",
+              "RelativeToolTip": "Models\\QueryData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAswAIAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T17:22:58.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FaultsController .cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Controllers\\FaultsController .cs",
+              "RelativeDocumentMoniker": "Controllers\\FaultsController .cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Controllers\\FaultsController .cs",
+              "RelativeToolTip": "Controllers\\FaultsController .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T03:09:36.677Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FaultRepository.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Repository\\FaultRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\FaultRepository.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Repository\\FaultRepository.cs",
+              "RelativeToolTip": "Repository\\FaultRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T03:06:59.902Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "LinearAlgebra.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\Mathematics\\LinearAlgebra.cs",
+              "RelativeDocumentMoniker": "Computations\\Mathematics\\LinearAlgebra.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\Mathematics\\LinearAlgebra.cs",
+              "RelativeToolTip": "Computations\\Mathematics\\LinearAlgebra.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T08:04:39.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Calculus.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\Mathematics\\Calculus.cs",
+              "RelativeDocumentMoniker": "Computations\\Mathematics\\Calculus.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\Mathematics\\Calculus.cs",
+              "RelativeToolTip": "Computations\\Mathematics\\Calculus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T08:04:38.459Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "EarthQuakeFeature.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Models\\EarthQuakeFeature.cs",
+              "RelativeDocumentMoniker": "Models\\EarthQuakeFeature.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Models\\EarthQuakeFeature.cs",
+              "RelativeToolTip": "Models\\EarthQuakeFeature.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAswBYAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T04:29:36.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "EarthQuakeView.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Models\\EarthQuakeView.cs",
+              "RelativeDocumentMoniker": "Models\\EarthQuakeView.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Models\\EarthQuakeView.cs",
+              "RelativeToolTip": "Models\\EarthQuakeView.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T19:32:05.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Fault.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Models\\Fault.cs",
+              "RelativeDocumentMoniker": "Models\\Fault.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Models\\Fault.cs",
+              "RelativeToolTip": "Models\\Fault.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T03:04:58.544Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "StationData.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Models\\StationData.cs",
+              "RelativeDocumentMoniker": "Models\\StationData.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Models\\StationData.cs",
+              "RelativeToolTip": "Models\\StationData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T13:42:04.565Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "SimpleFunctions.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\Mathematics\\SimpleFunctions.cs",
+              "RelativeDocumentMoniker": "Computations\\Mathematics\\SimpleFunctions.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\Mathematics\\SimpleFunctions.cs",
+              "RelativeToolTip": "Computations\\Mathematics\\SimpleFunctions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T08:04:41.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-07-20T18:47:20.194Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "EarthQuake",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\EarthQuake.csproj",
+              "RelativeDocumentMoniker": "EarthQuake.csproj",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\EarthQuake.csproj",
+              "RelativeToolTip": "EarthQuake.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-20T18:47:27.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "FaultStress.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\Seismology\\Global Stresses\\FaultStress.cs",
+              "RelativeDocumentMoniker": "Computations\\Seismology\\Global Stresses\\FaultStress.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\Seismology\\Global Stresses\\FaultStress.cs",
+              "RelativeToolTip": "Computations\\Seismology\\Global Stresses\\FaultStress.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T16:00:50.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAB/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-19T02:58:13.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Dockerfile",
+              "RelativeDocumentMoniker": "Dockerfile",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Dockerfile",
+              "RelativeToolTip": "Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-23T02:59:29.763Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": ".dockerignore",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\.dockerignore",
+              "RelativeDocumentMoniker": ".dockerignore",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\.dockerignore",
+              "RelativeToolTip": ".dockerignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-23T02:59:27.561Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "StationController.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Controllers\\StationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StationController.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Controllers\\StationController.cs",
+              "RelativeToolTip": "Controllers\\StationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T19:44:01.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "SeismicDataController.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Controllers\\SeismicDataController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SeismicDataController.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Controllers\\SeismicDataController.cs",
+              "RelativeToolTip": "Controllers\\SeismicDataController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T13:23:03.786Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "OkadaModelling.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Modelling\\OkadaModelling.cs",
+              "RelativeDocumentMoniker": "Modelling\\OkadaModelling.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Modelling\\OkadaModelling.cs",
+              "RelativeToolTip": "Modelling\\OkadaModelling.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-20T11:35:26.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "TsunamiModelling.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Modelling\\TsunamiModelling.cs",
+              "RelativeDocumentMoniker": "Modelling\\TsunamiModelling.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Modelling\\TsunamiModelling.cs",
+              "RelativeToolTip": "Modelling\\TsunamiModelling.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T16:38:46.561Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "GeoMagnetism.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\GeoMagnetism\\GeoMagnetism.cs",
+              "RelativeDocumentMoniker": "Computations\\GeoMagnetism\\GeoMagnetism.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\GeoMagnetism\\GeoMagnetism.cs",
+              "RelativeToolTip": "Computations\\GeoMagnetism\\GeoMagnetism.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T16:27:29.409Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "SWaveModelling.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Modelling\\SWaveModelling.cs",
+              "RelativeDocumentMoniker": "Modelling\\SWaveModelling.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Modelling\\SWaveModelling.cs",
+              "RelativeToolTip": "Modelling\\SWaveModelling.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T16:23:09.479Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "PWaveModelling.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Modelling\\PWaveModelling.cs",
+              "RelativeDocumentMoniker": "Modelling\\PWaveModelling.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Modelling\\PWaveModelling.cs",
+              "RelativeToolTip": "Modelling\\PWaveModelling.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T16:22:56.201Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Predictable.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Predictablity\\Predictable.cs",
+              "RelativeDocumentMoniker": "Predictablity\\Predictable.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Predictablity\\Predictable.cs",
+              "RelativeToolTip": "Predictablity\\Predictable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAB8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T16:20:51.553Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "PlateMovementRepository.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\Seismology\\EarthMovements\\Repository\\PlateMovementRepository.cs",
+              "RelativeDocumentMoniker": "Computations\\Seismology\\EarthMovements\\Repository\\PlateMovementRepository.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\Seismology\\EarthMovements\\Repository\\PlateMovementRepository.cs",
+              "RelativeToolTip": "Computations\\Seismology\\EarthMovements\\Repository\\PlateMovementRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T16:07:30.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "IPlateMovementRepository.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\Seismology\\EarthMovements\\Repository\\Interface\\IPlateMovementRepository.cs",
+              "RelativeDocumentMoniker": "Computations\\Seismology\\EarthMovements\\Repository\\Interface\\IPlateMovementRepository.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\Seismology\\EarthMovements\\Repository\\Interface\\IPlateMovementRepository.cs",
+              "RelativeToolTip": "Computations\\Seismology\\EarthMovements\\Repository\\Interface\\IPlateMovementRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T16:08:04.965Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "PlateMovement.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\Seismology\\EarthMovements\\PlateMovement.cs",
+              "RelativeDocumentMoniker": "Computations\\Seismology\\EarthMovements\\PlateMovement.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\Seismology\\EarthMovements\\PlateMovement.cs",
+              "RelativeToolTip": "Computations\\Seismology\\EarthMovements\\PlateMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T16:06:52.589Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "FaultStressRepository.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\Seismology\\Global Stresses\\Repository\\FaultStressRepository.cs",
+              "RelativeDocumentMoniker": "Computations\\Seismology\\Global Stresses\\Repository\\FaultStressRepository.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\Seismology\\Global Stresses\\Repository\\FaultStressRepository.cs",
+              "RelativeToolTip": "Computations\\Seismology\\Global Stresses\\Repository\\FaultStressRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T16:02:33.297Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "IFaultStressRepository.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\Seismology\\Global Stresses\\Repository\\Interface\\IFaultStressRepository.cs",
+              "RelativeDocumentMoniker": "Computations\\Seismology\\Global Stresses\\Repository\\Interface\\IFaultStressRepository.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\Seismology\\Global Stresses\\Repository\\Interface\\IFaultStressRepository.cs",
+              "RelativeToolTip": "Computations\\Seismology\\Global Stresses\\Repository\\Interface\\IFaultStressRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T16:03:51.505Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Rollback.sql",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\MigrationScripts\\Rollback.sql",
+              "RelativeDocumentMoniker": "MigrationScripts\\Rollback.sql",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\MigrationScripts\\Rollback.sql",
+              "RelativeToolTip": "MigrationScripts\\Rollback.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-07-10T08:30:29.485Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "ServiceIrisEduData.cs",
+              "DocumentMoniker": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\Seismology\\Models\\ServiceIrisEduData.cs",
+              "RelativeDocumentMoniker": "Computations\\Seismology\\Models\\ServiceIrisEduData.cs",
+              "ToolTip": "C:\\Users\\powel\\Dropbox\\Geodynamics\\Computations\\Seismology\\Models\\ServiceIrisEduData.cs",
+              "RelativeToolTip": "Computations\\Seismology\\Models\\ServiceIrisEduData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T13:27:19.807Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
