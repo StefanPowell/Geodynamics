@@ -15,3 +15,5 @@ obj\
 bin\
 .vs\
 /.config
+/.vs/EarthQuake/DesignTimeBuild/.dtbcache.v2
+/.vs/EarthQuake/v17/.suo
