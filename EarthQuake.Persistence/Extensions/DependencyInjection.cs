@@ -11,6 +11,7 @@ public static class DependencyInjection
     {
         string earthquakeDatabaseConnectionString = config.GetConnectionString("DefaultConnection");
 
-        return services.AddTransient<IEarthquakeRepository, EarthquakeRepository>(svc => new EarthquakeRepository(earthquakeDatabaseConnectionString));
+        return services.AddTransient<IEarthquakeRepository, EarthquakeRepository>(svc => new EarthquakeRepository(earthquakeDatabaseConnectionString))
+                       .AddTransient<IDataQueryRepository, DataQueryRepository>(svc => new DataQueryRepository(earthquakeDatabaseConnectionString));
     }
 }
