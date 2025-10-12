@@ -113,7 +113,7 @@ public class SeismicRateChangeService : ISeismicRateChangeService
 
     public async Task<int> GetNumberofEarthquakeEventsInGridArea(GridCell gridCell, DateOnly startdate, DateOnly enddate)
     {
-        IEnumerable<Feature> allQuakeEvents =  await _dataQueryRepository.GetNumberofEarthquakeEventsInGridArea(gridCell.startLatitude, gridCell.endLatitude, gridCell.startLongitude, gridCell.endLongitude, startdate, enddate);
+        IEnumerable<DBFeature> allQuakeEvents =  await _dataQueryRepository.GetNumberofEarthquakeEventsInGridArea(gridCell.startLatitude, gridCell.endLatitude, gridCell.startLongitude, gridCell.endLongitude, startdate, enddate);
         return allQuakeEvents.Count();
     }
 

@@ -197,3 +197,34 @@ BEGIN
     INNER JOIN @InsertedGeo g ON i.RowNum = g.RowNum;
 END;
 GO
+
+CREATE PROCEDURE [dbo].[sp_Feature_Get_AllWithGridAndTime]
+    @latitudeStart REAL,
+    @latitudeEnd REAL,
+    @longitudeStart REAL,
+    @longitudeEnd REAL,
+    @startDate DATETIME,
+    @endDate DATETIME
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT
+	    f.FeatureKey AS Id,
+		f.[Type] AS FeatureType,
+		g.[Type] AS GeometryType,
+		g.Latitude,
+		g.Longitude,
+		g.Depth,
+        p.mag AS Magnitude,
+		p.place AS Place,
+		DATEADD(SECOND, p.time / 1000, '1970-01-01') AS QuakeDateTime
+    FROM dbo.Geometry g
+    INNER JOIN dbo.Feature f ON f.GeometryId = g.GeometryId
+    INNER JOIN dbo.Properties p ON f.PropertiesId = p.PropertiesId 
+    WHERE g.Latitude  BETWEEN @latitudeStart  AND @latitudeEnd
+      AND g.Longitude BETWEEN @longitudeStart AND @longitudeEnd
+      AND DATEADD(SECOND, p.time / 1000, '1970-01-01') 
+            BETWEEN @startDate AND @endDate;
+END;
+GO

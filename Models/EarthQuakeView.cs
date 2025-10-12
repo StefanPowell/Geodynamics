@@ -10,9 +10,6 @@ namespace EarthQuake.Models
         public double lat { get; set; }
         public double lon { get; set; }
         public double time { get; set; }
-        public double? mmi { get; set; }
-        public double? azim { get; set; }
-        public int tsunami { get; set; }
 
         public EarthQuakeView(Feature quake) {
             mag = quake.properties.mag;
@@ -21,9 +18,6 @@ namespace EarthQuake.Models
             lat = quake.geometry.coordinates[0];
             lon = quake.geometry.coordinates[1];
             time = quake.properties.time;
-            mmi = quake.properties.mmi;
-            azim = quake.properties.gap;
-            tsunami = quake.properties.tsunami;
         }
     }
 }

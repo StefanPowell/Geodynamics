@@ -1,5 +1,6 @@
 using EarthQuake.Models;
 using EarthQuake.Persistence.Models;
+using EarthQuake.Persistence.Repository.Abstractions;
 using EarthQuake.USGS.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,9 +12,11 @@ namespace EarthQuake.Controllers
     {
         private readonly ILogger<QuakeDataController> _logger;
         private readonly IUSGSQUAKEAPI _api;
+        private readonly IEarthquakeRepository _earthquakeRepository;
 
-        public QuakeDataController(ILogger<QuakeDataController> logger, IUSGSQUAKEAPI api)
+        public QuakeDataController(ILogger<QuakeDataController> logger, IUSGSQUAKEAPI api, IEarthquakeRepository earthquakeRepository)
         {
+            _earthquakeRepository = earthquakeRepository;
             _logger = logger;
             _api = api;
         }
@@ -46,20 +49,12 @@ namespace EarthQuake.Controllers
         }
 
         [HttpGet(Name = "GetQuakes")]
-        public async Task<ActionResult<List<EarthQuakeView>>> GetQuakeData(int valuesToShow)
+        public async Task<ActionResult<List<DBFeature>>> GetQuakeData(int valuesToShow)
         {
             try
             {
-                List<Feature> test = await _api.GetQuakesQuery();
-                test = test.Take(valuesToShow).ToList();
-
-                List<EarthQuakeView> dataforfrontView = new List<EarthQuakeView>();
-                foreach (Feature feature in test)
-                {
-                    dataforfrontView.Add(new EarthQuakeView(feature));
-                }
-                return StatusCode(StatusCodes.Status200OK,
-                                    dataforfrontView);
+               List<DBFeature> allquakes = await _earthquakeRepository.GetLatestQuakes(valuesToShow);
+               return Ok(allquakes);
             }
             catch (Exception ex) 
             {
