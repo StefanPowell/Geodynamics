@@ -34,7 +34,7 @@ namespace EarthQuake.USGS
                 if (EarthQuakeDataRoot != null)
                 {
                     List<Feature> featurelist = EarthQuakeDataRoot.features;
-                    earthquakeRepo.SaveData(featurelist);
+                    await earthquakeRepo.SaveData(featurelist);
                 }
             }
             catch (Exception ex)
