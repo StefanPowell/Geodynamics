@@ -8,3 +8,7 @@
 /EarthQuake.Persistence/obj
 /EarthQuakeTests/bin/Debug
 /EarthQuakeTests/obj
+/Geodynamics/.vs
+/Geodynamics/bin/Debug
+/Geodynamics/obj
+/Geodynamics/Properties/PublishProfiles
