@@ -2,16 +2,8 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-*.vsidx
-*.bin
-*.suo
-*.dtbcache.v2
-
-# Ignore build output and Visual Studio folders
-bin/
-obj/
-.vs/
-obj\
-bin\
-.vs\
-/.config
+/EarthQuake.IntegrationTests/obj
+/EarthQuake.IntegrationTests/bin/Debug/net9.0
+/EarthQuake.Persistence/bin/Debug/net7.0
+/EarthQuake.Persistence/obj
+/EarthQuakeTests/bin/Debug
