@@ -7,139 +7,193 @@ GO
 CREATE SCHEMA quake;
 GO
 
--- Create the main faults table
-CREATE TABLE faults (
-    id INT IDENTITY(1,1) PRIMARY KEY,
-    name NVARCHAR(255) NOT NULL,
-    type NVARCHAR(50) NOT NULL,
-    dip INT,
-    last_movement DATE
-);
+USE [EarthQuake]
 GO
 
--- Create the fault_coordinates table
-CREATE TABLE fault_coordinates (
-    id INT IDENTITY(1,1) PRIMARY KEY,
-    fault_id INT NOT NULL,
-    latitude FLOAT NOT NULL,
-    longitude FLOAT NOT NULL,
-    point_order INT NOT NULL,
-    FOREIGN KEY (fault_id) REFERENCES faults(id) ON DELETE CASCADE
-);
+/****** Object:  Table [dbo].[Feature]    ******/
+SET ANSI_NULLS ON
 GO
 
-CREATE TABLE Metadata (
-    MetadataId INT IDENTITY(1,1) PRIMARY KEY,
-    generated BIGINT NOT NULL,
-    url NVARCHAR(2083) NOT NULL,
-    title NVARCHAR(MAX) NOT NULL,
-    status INT NOT NULL,
-    api NVARCHAR(100) NOT NULL,
-    count INT NOT NULL
-);
-
-CREATE TABLE Geometry (
-    GeometryId INT IDENTITY(1,1) PRIMARY KEY,
-    type NVARCHAR(50) NOT NULL,
-    coordinates NVARCHAR(MAX) NOT NULL -- JSON string representation of List<double>
-);
-
-CREATE TABLE Properties (
-    PropertiesId INT IDENTITY(1,1) PRIMARY KEY,
-    mag FLOAT NOT NULL,
-    place NVARCHAR(MAX) NOT NULL,
-    time FLOAT NOT NULL, -- double in C#
-    updated NVARCHAR(MAX) NULL,
-    tz NVARCHAR(MAX) NULL,
-    url NVARCHAR(MAX) NOT NULL,
-    detail NVARCHAR(MAX) NOT NULL,
-    felt NVARCHAR(MAX) NULL,
-    cdi NVARCHAR(MAX) NULL,
-    mmi FLOAT NULL,
-    alert NVARCHAR(MAX) NULL,
-    status NVARCHAR(50) NOT NULL,
-    tsunami INT NOT NULL,
-    sig INT NOT NULL,
-    net NVARCHAR(50) NOT NULL,
-    code NVARCHAR(50) NOT NULL,
-    ids NVARCHAR(MAX) NOT NULL,
-    sources NVARCHAR(MAX) NOT NULL,
-    types NVARCHAR(MAX) NOT NULL,
-    nst INT NULL,
-    dmin FLOAT NULL,
-    rms FLOAT NOT NULL,
-    gap FLOAT NULL,
-    magType NVARCHAR(50) NOT NULL,
-    type NVARCHAR(50) NOT NULL,
-    title NVARCHAR(MAX) NOT NULL
-);
-
-CREATE TABLE Feature (
-    id NVARCHAR(100) PRIMARY KEY,
-    type NVARCHAR(50) NOT NULL,
-    PropertiesId INT NOT NULL,
-    GeometryId INT NOT NULL,
-    CONSTRAINT FK_Feature_Properties FOREIGN KEY (PropertiesId) REFERENCES Properties(PropertiesId),
-    CONSTRAINT FK_Feature_Geometry FOREIGN KEY (GeometryId) REFERENCES Geometry(GeometryId)
-);
-
-CREATE TYPE Properties AS TABLE(        
-    mag FLOAT NOT NULL,
-    place NVARCHAR(255) NOT NULL,
-    time BIGINT NOT NULL,                     
-    updated NVARCHAR(100) NULL,               
-    tz NVARCHAR(50) NULL,                    
-    url NVARCHAR(2083) NOT NULL,
-    detail NVARCHAR(2083) NOT NULL,
-    felt NVARCHAR(50) NULL,                   
-    cdi NVARCHAR(50) NULL,
-    mmi FLOAT NULL,
-    alert NVARCHAR(50) NULL,                  
-    status NVARCHAR(50) NOT NULL,
-    tsunami INT NOT NULL,
-    sig INT NOT NULL,
-    net NVARCHAR(50) NOT NULL,
-    code NVARCHAR(50) NOT NULL,
-    ids NVARCHAR(255) NOT NULL,
-    sources NVARCHAR(255) NOT NULL,
-    types NVARCHAR(255) NOT NULL,
-    nst INT NULL,
-    dmin FLOAT NULL,
-    rms FLOAT NOT NULL,
-    gap FLOAT NULL,
-    magType NVARCHAR(50) NOT NULL,
-    type NVARCHAR(50) NOT NULL,
-    title NVARCHAR(255) NOT NULL
-);
-
-CREATE TYPE Geo AS TABLE
-(
-    Id INT NOT NULL, 
-    type NVARCHAR(100) NOT NULL
-);
-
-CREATE TYPE Coordinates AS TABLE
-(
-    GeoId INT NOT NULL,       
-    PointOrder INT NOT NULL,       
-    Coordinate FLOAT NOT NULL      
-);
-
-CREATE TYPE FeatureType AS TABLE
-(
-    Type NVARCHAR(100) NOT NULL,
-    PropertiesId INT NOT NULL,
-    GeoId INT NOT NULL,
-    Id NVARCHAR(100) NOT NULL
-);
+SET QUOTED_IDENTIFIER ON
 GO
 
---stored procedures
-CREATE PROCEDURE quake.InsertFeatures
-    @Feature FeatureType READONLY
+CREATE TABLE [dbo].[Feature](
+	[FeatureId] [int] IDENTITY(1,1) NOT NULL,
+	[FeatureKey] [nvarchar](100) NOT NULL,
+	[Type] [nvarchar](50) NOT NULL,
+	[PropertiesId] [int] NOT NULL,
+	[GeometryId] [int] NOT NULL,
+ CONSTRAINT [PK_Feature] PRIMARY KEY CLUSTERED 
+(
+	[FeatureId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Feature]  WITH CHECK ADD  CONSTRAINT [FK_Feature_Geometry] FOREIGN KEY([GeometryId])
+REFERENCES [dbo].[Geometry] ([GeometryId])
+GO
+
+ALTER TABLE [dbo].[Feature] CHECK CONSTRAINT [FK_Feature_Geometry]
+GO
+
+ALTER TABLE [dbo].[Feature]  WITH CHECK ADD  CONSTRAINT [FK_Feature_Properties] FOREIGN KEY([PropertiesId])
+REFERENCES [dbo].[Properties] ([PropertiesId])
+GO
+
+ALTER TABLE [dbo].[Feature] CHECK CONSTRAINT [FK_Feature_Properties]
+GO
+
+
+/****** Object:  Table [dbo].[Geometry]    ******/
+CREATE TABLE [dbo].[Geometry](
+	[GeometryId] [int] IDENTITY(1,1) NOT NULL,
+	[type] [nvarchar](50) NOT NULL,
+	[coordinates] [nvarchar](max) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[GeometryId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[Properties]  ******/
+CREATE TABLE [dbo].[Properties](
+	[PropertiesId] [int] IDENTITY(1,1) NOT NULL,
+	[mag] [float] NOT NULL,
+	[place] [nvarchar](max) NOT NULL,
+	[time] [float] NOT NULL,
+	[updated] [nvarchar](max) NULL,
+	[tz] [nvarchar](max) NULL,
+	[url] [nvarchar](max) NOT NULL,
+	[detail] [nvarchar](max) NOT NULL,
+	[felt] [nvarchar](max) NULL,
+	[cdi] [nvarchar](max) NULL,
+	[mmi] [float] NULL,
+	[alert] [nvarchar](max) NULL,
+	[status] [nvarchar](50) NOT NULL,
+	[tsunami] [int] NOT NULL,
+	[sig] [int] NOT NULL,
+	[net] [nvarchar](50) NOT NULL,
+	[code] [nvarchar](50) NOT NULL,
+	[ids] [nvarchar](max) NOT NULL,
+	[sources] [nvarchar](max) NOT NULL,
+	[types] [nvarchar](max) NOT NULL,
+	[nst] [int] NULL,
+	[dmin] [float] NULL,
+	[rms] [float] NOT NULL,
+	[gap] [float] NULL,
+	[magType] [nvarchar](50) NOT NULL,
+	[type] [nvarchar](50) NOT NULL,
+	[title] [nvarchar](max) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[PropertiesId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+/****** Object:  UserDefinedTableType [dbo].[Geo]    Script Date: 10/11/2025 11:21:24 PM ******/
+CREATE TYPE [dbo].[Geo] AS TABLE(
+	[latitude] [real] NOT NULL,
+	[longitude] [real] NOT NULL,
+	[depth] [real] NOT NULL,
+	[type] [nvarchar](100) NOT NULL
+)
+GO
+
+/****** Object:  UserDefinedTableType [dbo].[Identifiers]    Script Date: 10/11/2025 11:21:45 PM ******/
+CREATE TYPE [dbo].[Identifiers] AS TABLE(
+	[Id] [nvarchar](100) NOT NULL,
+	[Type] [nvarchar](100) NOT NULL
+)
+GO
+
+/****** Object:  UserDefinedTableType [dbo].[Properties]    Script Date: 10/11/2025 11:21:59 PM ******/
+CREATE TYPE [dbo].[Properties] AS TABLE(
+	[mag] [float] NOT NULL,
+	[place] [nvarchar](255) NOT NULL,
+	[time] [float] NOT NULL,
+	[updated] [nvarchar](100) NULL,
+	[tz] [nvarchar](50) NULL,
+	[url] [nvarchar](2083) NOT NULL,
+	[detail] [nvarchar](2083) NOT NULL,
+	[felt] [nvarchar](50) NULL,
+	[cdi] [nvarchar](50) NULL,
+	[mmi] [float] NULL,
+	[alert] [nvarchar](50) NULL,
+	[status] [nvarchar](50) NOT NULL,
+	[tsunami] [int] NOT NULL,
+	[sig] [int] NOT NULL,
+	[net] [nvarchar](50) NOT NULL,
+	[code] [nvarchar](50) NOT NULL,
+	[ids] [nvarchar](255) NOT NULL,
+	[sources] [nvarchar](255) NOT NULL,
+	[types] [nvarchar](255) NOT NULL,
+	[nst] [int] NULL,
+	[dmin] [float] NULL,
+	[rms] [float] NOT NULL,
+	[gap] [float] NULL,
+	[magType] [nvarchar](50) NOT NULL,
+	[type] [nvarchar](50) NOT NULL,
+	[title] [nvarchar](255) NOT NULL
+)
+GO
+
+-- stored procedure [InsertFeatures] --
+
+CREATE PROCEDURE [dbo].[InsertFeatures]
+    @Identifiers dbo.Identifiers READONLY,
+    @Geo dbo.Geo READONLY,
+    @Properties dbo.Properties READONLY
 AS
 BEGIN
-    INSERT INTO dbo.Feature (type, PropertiesId, GeometryId)
-    SELECT '', 1, 2;
+    SET NOCOUNT ON;
+
+    DECLARE @Inserted TABLE (RowNum INT IDENTITY(1,1), PropertiesId INT);
+    DECLARE @InsertedGeo TABLE (RowNum INT IDENTITY(1,1), GeometryId INT);
+    DECLARE @IdentifiersWithRow TABLE (RowNum INT IDENTITY(1,1), Id NVARCHAR(100), Type NVARCHAR(50));
+
+    -- Copy identifiers with row numbers for alignment
+    INSERT INTO @IdentifiersWithRow (Id, Type)
+    SELECT Id, Type FROM @Identifiers;
+
+    -- Insert into Properties
+    INSERT INTO dbo.Properties
+    (
+        [mag], [place], [time], [updated], [tz], [url], [detail],
+        [felt], [cdi], [mmi], [alert], [status], [tsunami], [sig],
+        [net], [code], [ids], [sources], [types], [nst], [dmin],
+        [rms], [gap], [magType], [type], [title]
+    )
+    OUTPUT INSERTED.PropertiesId INTO @Inserted(PropertiesId)
+    SELECT 
+        p.[mag], p.[place], p.[time], p.[updated], p.[tz], p.[url], p.[detail],
+        p.[felt], p.[cdi], p.[mmi], p.[alert], p.[status], p.[tsunami], p.[sig],
+        p.[net], p.[code], p.[ids], p.[sources], p.[types], p.[nst], p.[dmin],
+        p.[rms], p.[gap], p.[magType], p.[type], p.[title]
+    FROM @Properties p;
+
+    -- Insert into Geometry
+    INSERT INTO dbo.Geometry
+    (
+        [type], [coordinates]
+    )
+    OUTPUT INSERTED.GeometryId INTO @InsertedGeo(GeometryId)
+    SELECT
+        g.[type],
+        CONCAT(g.latitude, ',', g.longitude, ',', g.depth)
+    FROM @Geo g;
+
+    -- Insert into Feature (align by row number)
+    INSERT INTO dbo.Feature ([FeatureKey], [Type], [PropertiesId], [GeometryId])
+    SELECT 
+        i.Id,
+        i.Type,
+        p.PropertiesId,
+        g.GeometryId
+    FROM @IdentifiersWithRow i
+    INNER JOIN @Inserted p ON i.RowNum = p.RowNum
+    INNER JOIN @InsertedGeo g ON i.RowNum = g.RowNum;
 END;
 GO
