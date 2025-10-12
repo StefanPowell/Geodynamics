@@ -1,0 +1,180 @@
+.App {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+}
+.red{
+  border:3 px solid green;
+}
+/* Second Quadrant: Map */
+.red {
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-container {
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+}
+
+/* First Quadrant */
+.green,
+.yellow,
+.purple,
+.orange {
+  position: absolute;
+  width: 25%;
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.green {
+  background-color: green;
+  top: 0;
+  left: 50%;
+}
+
+.yellow {
+  background-color: yellow;
+  color: black;
+  top: 0;
+  left: 75%;
+}
+
+.purple {
+  background-color: purple;
+  top: 25%;
+  left: 50%;
+}
+
+.orange {
+  background-color: orange;
+  top: 25%;
+  left: 75%;
+}
+
+/* Third Quadrant (Blue) */
+.blue {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f8ff;
+  overflow: hidden;
+}
+
+/* Table container */
+.table-wrapper {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; /* scroll vertically if needed */
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+/* Fourth Quadrant */
+.pink {
+  background-color: pink;
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+.quadrant.green {
+  background-color: #001a00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.quadrant.green canvas {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 100%; /* optional control over height */
+}
+.seismograph-wrapper{
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  background-color: white;
+  
+}
+.blinking-dot {
+  width: 12px;
+  height: 12px;
+  background-color: red;
+  border-radius: 50%;
+  animation: blink 1s infinite;
+  box-shadow: 0 0 6px red;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+.map-container {
+  position: relative; /* or absolute is fine */
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+  z-index: 0; /* allow markers on top */
+  overflow: visible; /* important for markers */
+}
+.red {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Fixed table layout and text fitting */
+.quake-table {
+  width: 100%;
+  table-layout: fixed; /* already set */
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.quake-table th,
+.quake-table td {
+  border: 1px solid #ddd;
+  padding: 4px;
+  text-align: center;
+  overflow: hidden;         /* hide overflow */
+  text-overflow: ellipsis;  /* show ... for long text */
+  white-space: nowrap;      /* prevent wrapping */
+}
+
+tbody tr td{
+  border: 3px solid red;
+}
