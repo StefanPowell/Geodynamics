@@ -139,8 +139,7 @@ CREATE PROCEDURE quake.InsertFeatures
     @Feature FeatureType READONLY
 AS
 BEGIN
-    INSERT INTO dbo.Feature (type, PropertiesId, GeometryId, id)
-    SELECT Type, PropertiesId, GeoId, Id
-    FROM @Feature;
+    INSERT INTO dbo.Feature (type, PropertiesId, GeometryId)
+    SELECT '', 1, 2;
 END;
 GO

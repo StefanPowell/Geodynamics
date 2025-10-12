@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EarthQuake")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df75505f7f7a859773c60bf3ee0cbd800f71e446")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+80fabe68325fd1dbd99997fb0179390434bd6838")]
 [assembly: System.Reflection.AssemblyProductAttribute("EarthQuake")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EarthQuake")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
