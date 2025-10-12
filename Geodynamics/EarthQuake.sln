@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EarthQuake", "EarthQuake.csproj", "{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EarthQuake.UnitTests", "..\EarthQuakeTests\EarthQuake.UnitTests.csproj", "{207A9487-3AA1-4BC1-BCCD-39E42EC6DE82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EarthQuake.IntegrationTests", "..\EarthQuake.IntegrationTests\EarthQuake.IntegrationTests.csproj", "{49DDED7E-EA01-41DA-BDF4-31E6E5BFF056}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EarthQuake.Persistence", "..\EarthQuake.Persistence\EarthQuake.Persistence.csproj", "{7D1748D0-7606-4907-B2BC-92746F6BA3E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51AC3814-3379-4D2C-B2DD-8FDCF2BC12FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{207A9487-3AA1-4BC1-BCCD-39E42EC6DE82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{207A9487-3AA1-4BC1-BCCD-39E42EC6DE82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{207A9487-3AA1-4BC1-BCCD-39E42EC6DE82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{207A9487-3AA1-4BC1-BCCD-39E42EC6DE82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49DDED7E-EA01-41DA-BDF4-31E6E5BFF056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49DDED7E-EA01-41DA-BDF4-31E6E5BFF056}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49DDED7E-EA01-41DA-BDF4-31E6E5BFF056}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49DDED7E-EA01-41DA-BDF4-31E6E5BFF056}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D1748D0-7606-4907-B2BC-92746F6BA3E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D1748D0-7606-4907-B2BC-92746F6BA3E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D1748D0-7606-4907-B2BC-92746F6BA3E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D1748D0-7606-4907-B2BC-92746F6BA3E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92A5337F-FA8D-47B5-BEDC-50D23A3B2816}
+	EndGlobalSection
+EndGlobal
