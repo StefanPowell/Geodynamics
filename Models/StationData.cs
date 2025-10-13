@@ -2,7 +2,7 @@
 {
     public class StationData
     {
-        public string network {get; set;}
+        public string network { get; set; }
         public string station { get; set; }
         public double latitude { get; set; }
         public double longitude { get; set; }

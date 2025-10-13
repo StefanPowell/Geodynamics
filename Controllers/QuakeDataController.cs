@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace EarthQuake.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class QuakeDataController : ControllerBase
     {
         private readonly ILogger<QuakeDataController> _logger;

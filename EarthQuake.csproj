@@ -11,9 +11,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DataProcessing\**" />
     <Compile Remove="Services\**" />
+    <Content Remove="DataProcessing\**" />
     <Content Remove="Services\**" />
+    <EmbeddedResource Remove="DataProcessing\**" />
     <EmbeddedResource Remove="Services\**" />
+    <None Remove="DataProcessing\**" />
     <None Remove="Services\**" />
   </ItemGroup>
 
@@ -25,26 +29,8 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.6" />
     <PackageReference Include="Testcontainers" Version="4.7.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Computations\Geochemistry\" />
-    <Folder Include="Computations\GeoDynamics\" />
-    <Folder Include="Computations\Geophysics\Mantle Convection\" />
-    <Folder Include="Computations\Geophysics\Plate Tectonics\Continental drift\" />
-    <Folder Include="Computations\Geophysics\Plate Tectonics\Mountain building\" />
-    <Folder Include="Computations\Geophysics\Plate Tectonics\Subduction\" />
-    <Folder Include="Computations\Geophysics\Plate Tectonics\Seafloor spreading\" />
-    <Folder Include="Computations\Geostatistics\" />
-    <Folder Include="Computations\Heat Transfer\" />
-    <Folder Include="Computations\Volcanology\" />
-    <Folder Include="Computations\Oceanography\" />
-    <Folder Include="Computations\Seismology\Plate Tectonics\" />
-    <Folder Include="Computations\Seismology\FaultLine\" />
-    <Folder Include="DataProcessing\" />
-    <Folder Include="MigrationScripts\" />
   </ItemGroup>
 
   <ItemGroup>
