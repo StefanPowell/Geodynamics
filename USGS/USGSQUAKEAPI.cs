@@ -83,9 +83,9 @@ namespace EarthQuake.USGS
             return stationList;
         }
 
-        public async Task<List<miniSEED>> GetWaveFormData(ServiceIrisEduData data = null)
+        public async Task PostWaveFormData(DateTime startTime, DateTime endTime, ServiceIrisEduData data = null)
         {
-            string url = "https://service.iris.edu/fdsnws/dataselect/1/query?net=IU&sta=ANMO&loc=00&cha=BHZ&starttime=2010-02-27T06:30:00&endtime=2010-02-27T06:45:00&format=geocsv.inline";
+            string url = $"https://service.iris.edu/fdsnws/dataselect/1/query?net=IU&sta=ANMO&loc=00&cha=BHZ&starttime={startTime}&endtime={endTime}&format=geocsv.inline";
             HttpResponseMessage response = await _client.GetAsync(url);
             response.EnsureSuccessStatusCode();
             string responseBody = await response.Content.ReadAsStringAsync();
@@ -113,7 +113,7 @@ namespace EarthQuake.USGS
                     });
                 }
             }
-            return WaveFormData;
+            await earthquakeRepo.SaveWaveFormData(WaveFormData);
         }   
     }
 }

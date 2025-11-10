@@ -9,6 +9,6 @@ namespace EarthQuake.USGS.Interfaces
         void SendQuery(DateOnly starttime, DateOnly endtime);
         Task<List<Feature>> GetQuakesQuery();
         Task<List<StationData>> GetStations(double latitude, double longitude, int totalstations, int maxradius);
-        Task<List<miniSEED>> GetWaveFormData(ServiceIrisEduData data = null);
+        Task PostWaveFormData(DateTime startTime, DateTime endTime, ServiceIrisEduData data = null);
     }
 }

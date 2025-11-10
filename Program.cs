@@ -1,9 +1,19 @@
+using EarthQuake;
 using EarthQuake.Extensions;
 using EarthQuake.USGS;
 using EarthQuake.USGS.Interfaces;
+using Serilog;
+using Serilog.Events;
+using Serilog.Formatting.Compact;
+
+
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Debug()
+    .WriteTo.Console()
+    .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Host.UseSerilog();
 
 builder.Services.AddEarthQuakeServices(builder.Configuration);
 
@@ -18,7 +28,7 @@ builder.Services.AddHttpClient<IUSGSQUAKEAPI, USGSQUAKEAPI>(client =>
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddHostedService<Worker>();
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
