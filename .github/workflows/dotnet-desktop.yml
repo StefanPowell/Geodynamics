@@ -79,8 +79,9 @@ jobs:
         echo "App Project Path: $env:App_Project_Path"
       shell: pwsh
 
-    - name: Restore Dependencies
-      run: dotnet restore $env:Solution_Name
+    # 🔹 Only restore the main project to ignore missing subprojects
+    - name: Restore Dependencies (Main Project Only)
+      run: dotnet restore $env:App_Project_Path
       shell: pwsh
 
     - name: Build Application
@@ -101,3 +102,4 @@ jobs:
       with:
         name: EarthQuake_Build
         path: publish/
+
