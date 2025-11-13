@@ -57,8 +57,8 @@ jobs:
     runs-on: windows-latest
 
     env:
-      Solution_Name: EarthQuake.sln
-      App_Project_Path: EarthQuake.csproj
+      Solution_Name: Geodynamics/EarthQuake.sln
+      App_Project_Path: Geodynamics/EarthQuake.csproj
       Configuration: ${{ matrix.configuration }}
 
     steps:
