@@ -2,31 +2,4 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-<<<<<<< HEAD
-/EarthQuake.IntegrationTests/obj
-/EarthQuake.IntegrationTests/bin/Debug/net9.0
-/EarthQuake.Persistence/bin/Debug/net7.0
 /EarthQuake.Persistence/obj
-/EarthQuakeTests/bin/Debug
-/EarthQuakeTests/obj
-/Geodynamics/.vs
-/Geodynamics/bin/Debug
-/Geodynamics/obj
-/Geodynamics/Properties/PublishProfiles
-=======
-*.vsidx
-*.bin
-*.suo
-*.dtbcache.v2
-
-# Ignore build output and Visual Studio folders
-bin/
-obj/
-.vs/
-obj\
-bin\
-.vs\
-/.config
-/.vs/EarthQuake/DesignTimeBuild/.dtbcache.v2
-/.vs/EarthQuake/v17/.suo
->>>>>>> 363bab4726bf4988ef7490423fec5cb6ae185a74

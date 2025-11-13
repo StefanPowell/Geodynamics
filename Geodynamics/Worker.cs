@@ -17,7 +17,7 @@ public class Worker : BackgroundService
     {
         try
         {
-            StartAllWorkerServices();
+            StartAllBackGroundServices();
             while (!stoppingToken.IsCancellationRequested)
             {
                 await Task.Delay(1000, stoppingToken);
@@ -29,16 +29,16 @@ public class Worker : BackgroundService
         }
         finally
         {
-            StopAllWorkerServices();
+            StopAllBackGroundServices();
         }
     }
 
-    public void StartAllWorkerServices()
+    public void StartAllBackGroundServices()
     {
         _stressAccumulationService.Start();
     }
 
-    public void StopAllWorkerServices()
+    public void StopAllBackGroundServices()
     {
         _stressAccumulationService.Stop();
     }
