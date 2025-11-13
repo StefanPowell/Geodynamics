@@ -58,10 +58,8 @@ jobs:
 
     env:
       Solution_Name: EarthQuake.sln
-      #Test_Project_Path: EarthQuake.Tests\EarthQuake.Tests.csproj
-      App_Project_Path: EarthQuake.csproj 
-      #Wap_Project_Directory: EarthQuake.Package
-      #Wap_Project_Path: EarthQuake.Package\EarthQuake.App.Package.wapproj
+      App_Project_Path: EarthQuake.csproj
+      Configuration: ${{ matrix.configuration }}
 
     steps:
     - name: Checkout
@@ -69,13 +67,10 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Install .NET Core
+    - name: Install .NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-
-    - name: Setup MSBuild.exe
-      uses: microsoft/setup-msbuild@v2
 
     - name: Debug Variables
       run: |
@@ -84,40 +79,27 @@ jobs:
         echo "App Project Path: $env:App_Project_Path"
       shell: pwsh
 
-    - name: Restore Dependencies
-      run: dotnet restore $env:Solution_Name
+    # 🔹 Only restore the main project to ignore missing subprojects
+    - name: Restore Dependencies (Main Project Only)
+      run: dotnet restore $env:App_Project_Path
       shell: pwsh
 
-    - name: Build the Application (csproj)
-      run: dotnet build $env:App_Project_Path --configuration ${{ matrix.configuration }}
+    - name: Build Application
+      run: dotnet build $env:App_Project_Path --configuration $env:Configuration --no-restore
       shell: pwsh
 
-    #- name: Run Unit Tests
-    # run: dotnet test $env:Test_Project_Path --configuration ${{ matrix.configuration }}
-    #  shell: pwsh
-
-    # Commented-out WAP project steps
-    # - name: Restore the WAP Project
-    #   run: msbuild $env:Solution_Name /t:Restore /p:Configuration=${{ matrix.configuration }}
+    # Optional: run tests if you have any
+    # - name: Run Tests
+    #   run: dotnet test --configuration $env:Configuration --no-build
     #   shell: pwsh
 
-    # - name: Decode the pfx
-    #   run: |
-    #     $pfx_cert_byte = [System.Convert]::FromBase64String("${{ secrets.Base64_Encoded_Pfx }}")
-    #     $certificatePath = Join-Path -Path $env:Wap_Project_Directory -ChildPath "GitHubActionsWorkflow.pfx"
-    #     [IO.File]::WriteAllBytes("$certificatePath", $pfx_cert_byte)
-    #   shell: pwsh
-
-    # - name: Create the App Package
-    #   run: msbuild $env:Wap_Project_Path /p:Configuration=${{ matrix.configuration }} /p:UapAppxPackageBuildMode=StoreUpload /p:AppxBundle=Always /p:PackageCertificateKeyFile="$env:Wap_Project_Directory\GitHubActionsWorkflow.pfx" /p:PackageCertificatePassword=${{ secrets.Pfx_Key }}
-    #   shell: pwsh
-
-    # - name: Remove the pfx
-    #   run: Remove-Item -path "$env:Wap_Project_Directory\GitHubActionsWorkflow.pfx"
-    #   shell: pwsh
+    - name: Publish Application
+      run: dotnet publish $env:App_Project_Path --configuration $env:Configuration --output publish
+      shell: pwsh
 
     - name: Upload Build Artifacts
-      uses: actions/upload-artifact@v4.6.2
+      uses: actions/upload-artifact@v4
       with:
-        name: Application Build
-        path: EarthQuake.App\bin\${{ matrix.configuration }}\ # Path to .exe or compiled output
+        name: EarthQuake_Build
+        path: publish/
+
