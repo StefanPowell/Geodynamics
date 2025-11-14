@@ -87,10 +87,9 @@ jobs:
       run: dotnet build $env:App_Project_Path --configuration $env:Configuration --no-restore
       shell: pwsh
 
-    # Optional: run tests if you have any
-    # - name: Run Tests
-    #   run: dotnet test --configuration $env:Configuration --no-build
-    #   shell: pwsh
+    - name: Run Tests
+      run: dotnet test --configuration $env:Configuration --no-build
+      shell: pwsh
 
     - name: Publish Application
       run: dotnet publish $env:App_Project_Path --configuration $env:Configuration --output publish
@@ -101,4 +100,3 @@ jobs:
       with:
         name: EarthQuake_Build
         path: publish/
-
