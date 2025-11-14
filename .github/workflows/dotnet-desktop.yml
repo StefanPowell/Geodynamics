@@ -70,7 +70,7 @@ jobs:
     - name: Install .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: 9.0.x
 
     - name: Debug Variables
       run: |
@@ -91,12 +91,12 @@ jobs:
       run: dotnet test $env:Solution_Name --configuration $env:Configuration --no-build
       shell: pwsh
 
-    - name: Publish Application
-      run: dotnet publish $env:App_Project_Path --configuration $env:Configuration --output publish
-      shell: pwsh
+    #- name: Publish Application
+    #  run: dotnet publish $env:App_Project_Path --configuration $env:Configuration --output publish
+    #  shell: pwsh
 
-    - name: Upload Build Artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: EarthQuake_Build
-        path: publish/
+    #- name: Upload Build Artifacts
+    #  uses: actions/upload-artifact@v4
+    #  with:
+    #    name: EarthQuake_Build
+    #    path: publish/
