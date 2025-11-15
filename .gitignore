@@ -5,3 +5,5 @@
 /EarthQuake.Persistence/obj
 /EarthQuake.UnitTests/bin/Debug/net9.0
 /EarthQuake.UnitTests/obj
+/EarthQuake.IntegrationTests/bin/Debug/net9.0
+/EarthQuake.IntegrationTests/obj
