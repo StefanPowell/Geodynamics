@@ -54,11 +54,11 @@ jobs:
       matrix:
         configuration: [Debug]
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest   # Changed from windows-latest to Linux for Docker support
 
     env:
       Solution_Name: Geodynamics/EarthQuake.sln
-      App_Project_Path: Geodynamics/EarthQuake.csproj
+      App_Project_Path: EarthQuake.csproj      
       Configuration: ${{ matrix.configuration }}
 
     steps:
@@ -70,33 +70,31 @@ jobs:
     - name: Install .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: |
+          8.0.x
+          9.0.x
 
     - name: Debug Variables
       run: |
-        echo "Solution Name: $env:Solution_Name"
-        echo "Configuration: $env:Configuration"
-        echo "App Project Path: $env:App_Project_Path"
-      shell: pwsh
+        echo "Solution Name: $Solution_Name"
+        echo "Configuration: $Configuration"
+        echo "App Project Path: $App_Project_Path"
 
     - name: Restore Dependencies
-      run: dotnet restore $env:Solution_Name
-      shell: pwsh
+      run: dotnet restore $Solution_Name
 
     - name: Build Application
-      run: dotnet build $env:App_Project_Path --configuration $env:Configuration --no-restore
-      shell: pwsh
+      run: dotnet build $Solution_Name --configuration $Configuration --no-restore
 
-    - name: Run Tests
-      run: dotnet test --configuration $env:Configuration --no-build
-      shell: pwsh
+    - name: Run Tests (including Testcontainers integration tests)
+      run: dotnet test $Solution_Name --configuration $Configuration --no-build --logger "trx;LogFileName=test_results.trx"
 
-    - name: Publish Application
-      run: dotnet publish $env:App_Project_Path --configuration $env:Configuration --output publish
-      shell: pwsh
+    #- name: Publish Application
+    #  run: dotnet publish $env:App_Project_Path --configuration $env:Configuration --output publish
+    #  shell: pwsh
 
-    - name: Upload Build Artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: EarthQuake_Build
-        path: publish/
+    #- name: Upload Build Artifacts
+    #  uses: actions/upload-artifact@v4
+    #  with:
+    #    name: EarthQuake_Build
+    #    path: publish/
