@@ -58,7 +58,7 @@ jobs:
 
     env:
       Solution_Name: Geodynamics/EarthQuake.sln
-      App_Project_Path: Geodynamics/EarthQuake.csproj
+      App_Project_Path: EarthQuake.csproj      
       Configuration: ${{ matrix.configuration }}
 
     steps:
@@ -70,7 +70,9 @@ jobs:
     - name: Install .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 9.0.x
+        dotnet-version: |
+          8.0.x
+          9.0.x
 
     - name: Debug Variables
       run: |
@@ -84,7 +86,7 @@ jobs:
       shell: pwsh
 
     - name: Build Application
-      run: dotnet build $env:App_Project_Path --configuration $env:Configuration --no-restore
+      run: dotnet build $env:Solution_Name --configuration $env:Configuration --no-restore
       shell: pwsh
 
     - name: Run Tests
