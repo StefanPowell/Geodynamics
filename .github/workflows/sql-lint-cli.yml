@@ -1,4 +1,5 @@
-name: Run sql-lint CLI
+name: Lint SQL Server Scripts
+
 on: [push, pull_request]
 
 jobs:
@@ -9,13 +10,13 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          node-version: '20'
+          python-version: '3.11'
 
-      - name: Install sql-lint
-        run: npm install -g sql-lint
+      - name: Install SQLFluff
+        run: pip install sqlfluff
 
-      - name: Run sql-lint on SQL scripts
-        run: sql-lint Geodynamics/MigrationScripts/Apply.sql
+      - name: Run SQLFluff (T-SQL)
+        run: sqlfluff lint Geodynamics/MigrationScripts/Apply.sql --dialect tsql
