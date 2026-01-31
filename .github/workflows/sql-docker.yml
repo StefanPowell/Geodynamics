@@ -1,0 +1,32 @@
+name: Lint SQL Server Scripts
+
+on: [push, pull_request]
+
+jobs:
+  sql-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Start SQL Server
+        run: |
+          docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=YourStrong!Passw0rd" \
+            -p 1433:1433 -d --name sqltest mcr.microsoft.com/mssql/server:2022-latest
+
+      - name: Wait for SQL Server
+        run: sleep 30
+
+      - name: Run SQL scripts in order
+        run: |
+          SCRIPTS=(
+            "Geodynamics/MigrationScripts/Apply.sql"
+            "Geodynamics/MigrationScripts/Rollback.sql"
+          )
+      
+          for f in "${SCRIPTS[@]}"; do
+            docker exec sqltest /opt/mssql-tools/bin/sqlcmd \
+              -S localhost -U sa -P "YourStrong!Passw0rd" \
+              -i "$f" || exit 1
+          done
+
+
