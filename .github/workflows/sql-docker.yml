@@ -17,6 +17,7 @@ jobs:
         run: sleep 30
 
       - name: Run SQL scripts in order
+        shell: bash
         run: |
           SCRIPTS=(
             "Geodynamics/MigrationScripts/Apply.sql"
@@ -24,9 +25,10 @@ jobs:
           )
       
           for f in "${SCRIPTS[@]}"; do
-            docker exec sqltest /opt/mssql-tools/bin/sqlcmd \
+            echo "Running $f"
+            docker exec sqltest /opt/mssql-tools18/bin/sqlcmd \
               -S localhost -U sa -P "YourStrong!Passw0rd" \
-              -i "$f" || exit 1
+              -C -i "$f" || exit 1
           done
 
 
