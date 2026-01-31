@@ -1,6 +1,12 @@
 name: Lint SQL Server Scripts
 
-on: [push, pull_request]
+on:
+  push:
+    paths:
+      - 'Geodynamics/MigrationScripts/**'
+  pull_request:
+    paths:
+      - 'Geodynamics/MigrationScripts/**'
 
 jobs:
   sql-test:
