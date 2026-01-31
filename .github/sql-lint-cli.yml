@@ -1,0 +1,21 @@
+name: Run sql-lint CLI
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install sql-lint
+        run: npm install -g sql-lint
+
+      - name: Run sql-lint on SQL scripts
+        run: sql-lint Geodynamics/MigrationScripts/Apply.sql
