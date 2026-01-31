@@ -19,4 +19,4 @@ jobs:
         run: pip install sqlfluff
 
       - name: Run SQLFluff (T-SQL)
-        run: sqlfluff lint Geodynamics/MigrationScripts/Apply.sql --dialect tsql
+        run: sqlfluff lint Geodynamics/MigrationScripts/*.sql 
