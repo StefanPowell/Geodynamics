@@ -27,7 +27,6 @@ jobs:
             sleep 2
           done
 
-
       - name: Run SQL scripts in order
         shell: bash
         run: |
@@ -38,9 +37,11 @@ jobs:
       
           for f in "${SCRIPTS[@]}"; do
             echo "Running $f"
-            docker exec sqltest /opt/mssql-tools18/bin/sqlcmd \
-              -S localhost -U sa -P "YourStrong!Passw0rd" \
-              -C -i "$f" || exit 1
+            cat "$f" | docker exec -i sqltest \
+              /opt/mssql-tools18/bin/sqlcmd \
+              -S localhost -U sa -P "YourStrong!Passw0rd" -C \
+              || exit 1
           done
+
 
 
