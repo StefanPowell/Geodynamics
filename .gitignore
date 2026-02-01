@@ -8,3 +8,8 @@
 /EarthQuake.IntegrationTests/bin/Debug/net9.0
 /EarthQuake.IntegrationTests/obj
 /EarthQuake.Persistence/bin/Debug/net9.0
+/Geodynamics/Properties/PublishProfiles
+/Geodynamics/EarthQuake.csproj.user
+/EarthQuake.IntegrationTests/bin/Release/net9.0
+/EarthQuake.Persistence/bin/Release/net9.0
+/EarthQuake.UnitTests/bin/Release/net9.0

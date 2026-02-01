@@ -7,11 +7,6 @@ GO
 CREATE SCHEMA quake;
 GO
 
-USE [EarthQuake]
-GO
-
---Normal Tables
-
 CREATE TABLE [dbo].[Properties](
 	[PropertiesId] [int] IDENTITY(1,1) NOT NULL,
 	[mag] [float] NOT NULL,
