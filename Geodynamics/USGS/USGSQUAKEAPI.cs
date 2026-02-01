@@ -1,7 +1,6 @@
 ﻿using EarthQuake.Models;
 using Newtonsoft.Json;
 using System.Globalization;
-using EarthQuake.Computations.Seismology.Models;
 using EarthQuake.USGS.Interfaces;
 using EarthQuake.Persistence.Models;
 using EarthQuake.Persistence.Repository.Abstractions;
