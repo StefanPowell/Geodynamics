@@ -13,3 +13,6 @@
 /EarthQuake.IntegrationTests/bin/Release/net9.0
 /EarthQuake.Persistence/bin/Release/net9.0
 /EarthQuake.UnitTests/bin/Release/net9.0
+/EarthQuakeDataAutomate/bin
+/EarthQuakeDataAutomate/obj
+/EarthQuakeDataAutomate/Properties/PublishProfiles
