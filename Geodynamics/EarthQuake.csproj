@@ -41,4 +41,12 @@
     <ProjectReference Include="..\EarthQuake.Persistence\EarthQuake.Persistence.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+		<Content Include="Computations\Geomorphology\FaultLines\**\*.*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+		</Content>
+	</ItemGroup>
+
+
 </Project>

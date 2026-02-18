@@ -1,5 +1,6 @@
 using EarthQuake;
 using EarthQuake.Extensions;
+using EarthQuake.SignalR;
 using EarthQuake.USGS;
 using EarthQuake.USGS.Interfaces;
 using Serilog;
@@ -28,7 +29,20 @@ builder.Services.AddHttpClient<IUSGSQUAKEAPI, USGSQUAKEAPI>(client =>
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSignalR();
 builder.Services.AddHostedService<Worker>();
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials()
+              .WithOrigins("http://localhost:5214"); // your Blazor app URL
+    });
+});
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -44,8 +58,10 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseRouting(); 
+app.UseCors();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHub<EarthquakeHub>("/EarthquakeHub");
 
 app.Run();

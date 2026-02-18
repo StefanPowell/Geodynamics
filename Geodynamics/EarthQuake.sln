@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EarthQuake.UnitTests", "..\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EarthQuake.IntegrationTests", "..\EarthQuake.IntegrationTests\EarthQuake.IntegrationTests.csproj", "{872C4473-2066-488A-A31E-749EB3A2C457}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EarthQuakeDataAutomate", "..\EarthQuakeDataAutomate\EarthQuakeDataAutomate.csproj", "{A0F69AFD-EFBF-4926-B066-4B6335F57AE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{872C4473-2066-488A-A31E-749EB3A2C457}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{872C4473-2066-488A-A31E-749EB3A2C457}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{872C4473-2066-488A-A31E-749EB3A2C457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0F69AFD-EFBF-4926-B066-4B6335F57AE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0F69AFD-EFBF-4926-B066-4B6335F57AE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0F69AFD-EFBF-4926-B066-4B6335F57AE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0F69AFD-EFBF-4926-B066-4B6335F57AE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

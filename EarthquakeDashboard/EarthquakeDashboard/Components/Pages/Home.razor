@@ -1,0 +1,46 @@
+﻿@page "/"
+@rendermode InteractiveServer
+@using MudBlazor
+@inject EarthquakeDashboard.Services.SignalRService SignalRService
+
+<PageTitle>Home</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Medium">
+    <MudPaper Elevation="10" Class="pa-8 ma-8" Style="border: 2px solid #1976d2; border-radius: 4px;">
+        <h3>Earthquake Counter</h3>
+        <MudText Typo="Typo.h4">Current Count: @currentCount</MudText>
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@IncrementNumber">
+            Increment
+        </MudButton>
+    </MudPaper>
+</MudContainer>
+
+@code {
+    private int currentCount = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Connect to the SignalR hub
+        await SignalRService.ConnectAsync("http://localhost:50392/EarthquakeHub");
+
+        // Subscribe to updates
+        SignalRService.OnCounterUpdated += (count) =>
+        {
+            currentCount = count;
+            InvokeAsync(StateHasChanged); // refresh UI
+        };
+    }
+
+    private async Task IncrementNumber()
+    {
+        try
+        {
+            await SignalRService.IncrementCounter();
+        }
+        catch(Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
+    }
+}

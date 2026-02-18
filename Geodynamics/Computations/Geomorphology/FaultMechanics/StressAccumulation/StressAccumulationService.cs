@@ -12,12 +12,17 @@ namespace EarthQuake.Computations.Geomorphology.FaultMechanics.StressAccumulatio
         private readonly string _jsonString;
         private readonly System.Timers.Timer _timer;
         private readonly IEarthquakeRepository _earthquakeRepository;
+        private readonly IWebHostEnvironment _env;
 
-        public StressAccumulationService(IEarthquakeRepository earthquakeRepository, ILogger<StressAccumulationService> logger)
+        public StressAccumulationService(IEarthquakeRepository earthquakeRepository, ILogger<StressAccumulationService> logger, IWebHostEnvironment env)
         {
             _earthquakeRepository = earthquakeRepository;
+            _env = env;
 
-            string filePath = @"C:\Users\powel\source\repos\Geodynamics\Computations\Geomorphology\FaultLines\gem_active_faults.geojson";
+            string filePath = Path.Combine(
+            _env.ContentRootPath,
+            "Computations\\Geomorphology\\FaultLines",
+            "gem_active_faults.geojson");
 
             if (!File.Exists(filePath))
                 throw new FileNotFoundException($"GeoJSON file not found at path: {filePath}");
@@ -32,6 +37,7 @@ namespace EarthQuake.Computations.Geomorphology.FaultMechanics.StressAccumulatio
 
             _timer.Elapsed += AccumulatedStressOnFault;
             _logger = logger;
+            _env = env;
         }
 
         public void Start()
