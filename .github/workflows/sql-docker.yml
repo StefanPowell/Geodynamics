@@ -37,8 +37,7 @@ jobs:
         shell: bash
         run: |
           SCRIPTS=(
-            "Geodynamics/MigrationScripts/Apply.sql"
-            "Geodynamics/MigrationScripts/Rollback.sql"
+            "Geodynamics/MigrationScripts/*.sql"
           )
       
           for f in "${SCRIPTS[@]}"; do
