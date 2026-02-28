@@ -11,3 +11,5 @@ DROP TYPE [dbo].[FaultLine];
 DROP TABLE [dbo].[faultCoordinates];
 
 DROP TABLE [dbo].[fault];
+
+Go
