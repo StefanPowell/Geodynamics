@@ -72,70 +72,9 @@ ALTER TABLE [dbo].[Feature]  WITH CHECK ADD  CONSTRAINT [FK_Feature_Geometry] FO
 REFERENCES [dbo].[Geometry] ([GeometryId])
 GO
 
-ALTER TABLE [dbo].[Feature] CHECK CONSTRAINT [FK_Feature_Geometry]
-GO
-
 ALTER TABLE [dbo].[Feature]  WITH CHECK ADD  CONSTRAINT [FK_Feature_Properties] FOREIGN KEY([PropertiesId])
 REFERENCES [dbo].[Properties] ([PropertiesId])
 GO
-
-ALTER TABLE [dbo].[Feature] CHECK CONSTRAINT [FK_Feature_Properties]
-GO
-
-CREATE TABLE [dbo].[faults](
-	[id] [int] IDENTITY(1,1) NOT NULL,
-	[name] [nvarchar](255) NOT NULL,
-	[type] [nvarchar](50) NOT NULL,
-	[dip] [int] NULL,
-	[last_movement] [date] NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-
-CREATE TABLE [dbo].[fault_coordinates](
-	[id] [int] IDENTITY(1,1) NOT NULL,
-	[fault_id] [int] NOT NULL,
-	[latitude] [float] NOT NULL,
-	[longitude] [float] NOT NULL,
-	[point_order] [int] NOT NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-
-ALTER TABLE [dbo].[fault_coordinates]  WITH CHECK ADD FOREIGN KEY([fault_id])
-REFERENCES [dbo].[faults] ([id])
-ON DELETE CASCADE
-GO
-
-
-CREATE TABLE [dbo].[faultStress](
-	[id] [int] IDENTITY(1,1) NOT NULL,
-	[faultId] [int] NOT NULL,
-	[faultName] [nvarchar](255) NOT NULL,
-	[slipRate_m_per_yr] [float] NULL,
-	[lockedThickness_m] [float] NULL,
-	[ruptureLength_m] [float] NULL,
-	[shearStressRate_MPa_per_yr] [float] NULL,
-	[accumulatedStress_MPa] [float] NULL,
-	[expectedSlip_m] [float] NULL,
-	[momentMagnitude_Mw] [float] NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-
-ALTER TABLE [dbo].[faultStress]  WITH CHECK ADD  CONSTRAINT [FK_faultStress_faultId] FOREIGN KEY([faultId])
-REFERENCES [dbo].[faults] ([id])
-GO
-
 
 CREATE TABLE [dbo].[Metadata](
 	[MetadataId] [int] IDENTITY(1,1) NOT NULL,
