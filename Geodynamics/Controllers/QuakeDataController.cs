@@ -1,4 +1,3 @@
-using EarthQuake.Models;
 using EarthQuake.Persistence.Models;
 using EarthQuake.Persistence.Repository.Abstractions;
 using EarthQuake.USGS.Interfaces;

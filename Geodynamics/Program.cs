@@ -4,8 +4,6 @@ using EarthQuake.SignalR;
 using EarthQuake.USGS;
 using EarthQuake.USGS.Interfaces;
 using Serilog;
-using Serilog.Events;
-using Serilog.Formatting.Compact;
 
 
 Log.Logger = new LoggerConfiguration()
@@ -36,10 +34,10 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
     {
-        policy.AllowAnyHeader()
+        policy.WithOrigins("http://localhost:5214", "https://localhost:44351", "https://localhost:7184")
+              .AllowAnyHeader()
               .AllowAnyMethod()
-              .AllowCredentials()
-              .WithOrigins("http://localhost:5214"); // your Blazor app URL
+              .AllowCredentials(); // your Blazor app URL
     });
 });
 
@@ -55,7 +53,7 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseRouting(); 
 app.UseCors();

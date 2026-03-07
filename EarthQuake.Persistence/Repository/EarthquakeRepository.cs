@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using EarthQuake.Models;
+using EarthQuake.Persistence.Enum;
 using EarthQuake.Persistence.Models;
 using EarthQuake.Persistence.Repository.Abstractions;
 using Microsoft.Data.SqlClient;
@@ -186,5 +187,26 @@ public class EarthquakeRepository : IEarthquakeRepository
             new { FaultStressList = parameter.Value },
             commandType: CommandType.StoredProcedure
         );
+    }
+
+    public int QuakesInTimeFrameAndWithinDistanceOfFault(DateTime starttime, DateTime endTime, double distance, UnitOfMeasure metric)
+    {
+        using (var sql = CreateConnection())
+        {
+            var parameters = new { 
+                StartTime = starttime,
+                EndTime = endTime,
+                distance = distance,
+                Metric = metric
+            };
+
+            int totalQuakes = sql.QuerySingle<int>(
+                "dbo.usp_Get_TotalQuakesInTimeFrameAndWithinDistanceOfFault",
+                parameters,
+                commandType: CommandType.StoredProcedure
+            );
+
+            return totalQuakes;
+        }
     }
 }

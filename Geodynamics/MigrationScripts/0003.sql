@@ -1,9 +1,9 @@
 CREATE TABLE [dbo].[fault](
 	[id] INT IDENTITY(1,1) NOT NULL,
-	[averageDip] NVARCHAR(255) NOT NULL,
-	[averageRake] NVARCHAR(50) NOT NULL,
+	[averageDip] NVARCHAR(255) NULL,
+	[averageRake] NVARCHAR(50) NULL,
 	[catalogId] INT NULL,
-	[catalogName] DATE NULL,
+	[catalogName] NVARCHAR(100) NULL,
 	[dipDir] NVARCHAR(100) NULL,
 	[lowerSeisDepth] NVARCHAR(100) NULL,
 	[name] NVARCHAR(255) NULL,
@@ -30,10 +30,10 @@ CREATE TABLE [dbo].[faultCoordinates](
 GO
 
 CREATE TYPE [dbo].[FaultLine] AS TABLE(
-	[averageDip] NVARCHAR(255) NOT NULL,
-	[averageRake] NVARCHAR(50) NOT NULL,
+	[averageDip] NVARCHAR(255) NULL,
+	[averageRake] NVARCHAR(50) NULL,
 	[catalogId] INT NULL,
-	[catalogName] DATE NULL,
+	[catalogName] NVARCHAR(100) NULL,
 	[dipDir] NVARCHAR(100) NULL,
 	[lowerSeisDepth] NVARCHAR(100) NULL,
 	[name] NVARCHAR(255) NULL,

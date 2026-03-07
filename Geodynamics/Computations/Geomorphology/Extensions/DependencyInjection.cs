@@ -1,8 +1,8 @@
 ﻿using EarthQuake.Computations.Geomorphology.FaultMechanics.NetSlipRate;
 using EarthQuake.Computations.Geomorphology.FaultMechanics.StressAccumulation;
-using EarthQuake.Interface;
 using EarthQuake.Interface.Computations.Geomorphology.FaultMechanics.NetSlipRate;
 using EarthQuake.Interface.Computations.Geomorphology.FaultMechanics.StressAccumulation;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace EarthQuake.Computations.Geomorphology.Extensions;
 

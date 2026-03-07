@@ -11,8 +11,8 @@ public class EarthquakeHub : Hub
     {
         try
         {
-            _counter++;
-            await Clients.All.SendAsync("ReceiveMessage", _counter);
+            var newValue = Interlocked.Increment(ref _counter);
+            await Clients.All.SendAsync("CounterUpdated", newValue);
         }
         catch (Exception ex)
         {
@@ -25,8 +25,7 @@ public class EarthquakeHub : Hub
     {
         try
         {
-            // Send current counter to only the newly connected client
-            await Clients.Caller.SendAsync("ReceiveMessage", _counter);
+            await Clients.Caller.SendAsync("CounterUpdated", _counter);
 
             await base.OnConnectedAsync();
         }
