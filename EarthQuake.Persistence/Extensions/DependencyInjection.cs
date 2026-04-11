@@ -20,6 +20,9 @@ public static class DependencyInjection
         services.AddTransient<IFaultRepository>(sp =>
             new FaultRepository(earthquakeDatabaseConnectionString));
 
+        services.AddTransient<IStressRepository>(sp =>
+            new StressRepository(earthquakeDatabaseConnectionString));
+
         return services;
     }
 

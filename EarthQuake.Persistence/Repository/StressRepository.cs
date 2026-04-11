@@ -29,89 +29,93 @@ public class StressRepository : IStressRepository
             DataTable? crustStressTable = new DataTable();
 
             crustStressTable.Columns.Add("ID", typeof(string));
-            crustStressTable.Columns.Add("ISC_ID", typeof(string));
-            crustStressTable.Columns.Add("SITE", typeof(string));
-            crustStressTable.Columns.Add("LAT", typeof(decimal));
-            crustStressTable.Columns.Add("LON", typeof(decimal));
-            crustStressTable.Columns.Add("AZI", typeof(decimal));
-            crustStressTable.Columns.Add("TYPE", typeof(string));
-            crustStressTable.Columns.Add("DEPTH", typeof(decimal));
-            crustStressTable.Columns.Add("QUALITY", typeof(char));
-            crustStressTable.Columns.Add("REGIME", typeof(string));
-            crustStressTable.Columns.Add("LOCALITY", typeof(string));
-            crustStressTable.Columns.Add("COUNTRY", typeof(string));
-            crustStressTable.Columns.Add("DATE", typeof(DateOnly));
-            crustStressTable.Columns.Add("TIME", typeof(TimeOnly));
-            crustStressTable.Columns.Add("NUMBER", typeof(int));
-            crustStressTable.Columns.Add("SD", typeof(decimal));
-            crustStressTable.Columns.Add("TOT_LEN", typeof(decimal));
-            crustStressTable.Columns.Add("VENT", typeof(string));
-            crustStressTable.Columns.Add("TOP", typeof(decimal));
-            crustStressTable.Columns.Add("BOT", typeof(decimal));
-            crustStressTable.Columns.Add("ANISOTROPY", typeof(string));
-            crustStressTable.Columns.Add("METHOD", typeof(string));
-            crustStressTable.Columns.Add("S1AZ", typeof(decimal));
-            crustStressTable.Columns.Add("S1PL", typeof(decimal));
-            crustStressTable.Columns.Add("S2AZ", typeof(decimal));
-            crustStressTable.Columns.Add("S2PL", typeof(decimal));
-            crustStressTable.Columns.Add("S3AZ", typeof(decimal));
-            crustStressTable.Columns.Add("S3PL", typeof(decimal));
-            crustStressTable.Columns.Add("MAG_TYPE", typeof(string));
-            crustStressTable.Columns.Add("EQ_MAG", typeof(decimal));
-            crustStressTable.Columns.Add("CRUST", typeof(string));
-            crustStressTable.Columns.Add("REF1", typeof(string));
-            crustStressTable.Columns.Add("REF2", typeof(string));
-            crustStressTable.Columns.Add("REF3", typeof(string));
-            crustStressTable.Columns.Add("REF4", typeof(string));
-            crustStressTable.Columns.Add("REF5", typeof(string));
-            crustStressTable.Columns.Add("REF6", typeof(string));
-            crustStressTable.Columns.Add("COMMENT", typeof(string));
-            crustStressTable.Columns.Add("PLATE", typeof(string));
-            crustStressTable.Columns.Add("DIST", typeof(decimal));
+            crustStressTable.Columns.Add("ISC_ID", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("SITE", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("LAT", typeof(decimal)).AllowDBNull = true;
+            crustStressTable.Columns.Add("LON", typeof(decimal)).AllowDBNull = true;
+            crustStressTable.Columns.Add("AZI", typeof(decimal)).AllowDBNull = true;
+            crustStressTable.Columns.Add("TYPE", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("DEPTH", typeof(decimal)).AllowDBNull = true;
+            crustStressTable.Columns.Add("QUALITY", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("REGIME", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("LOCALITY", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("COUNTRY", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("DATE", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("TIME", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("NUMBER", typeof(int)).AllowDBNull = true;
+            crustStressTable.Columns.Add("SD", typeof(decimal)).AllowDBNull = true;
+            crustStressTable.Columns.Add("TOT_LEN", typeof(decimal)).AllowDBNull = true;
+            crustStressTable.Columns.Add("VENT", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("TOP", typeof(decimal)).AllowDBNull = true;
+            crustStressTable.Columns.Add("BOT", typeof(decimal)).AllowDBNull = true;
+            crustStressTable.Columns.Add("ANISOTROPY", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("METHOD", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("S1AZ", typeof(decimal)).AllowDBNull = true;
+            crustStressTable.Columns.Add("S1PL", typeof(decimal)).AllowDBNull = true;
+            crustStressTable.Columns.Add("S2AZ", typeof(decimal)).AllowDBNull = true;
+            crustStressTable.Columns.Add("S2PL", typeof(decimal)).AllowDBNull = true;
+            crustStressTable.Columns.Add("S3AZ", typeof(decimal)).AllowDBNull = true;
+            crustStressTable.Columns.Add("S3PL", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("MAG_TYPE", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("EQ_MAG", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("CRUST", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("REF1", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("REF2", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("REF3", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("REF4", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("REF5", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("REF6", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("COMMENT", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("PLATE", typeof(string)).AllowDBNull = true;
+            crustStressTable.Columns.Add("DIST", typeof(decimal)).AllowDBNull = true;
 
-            foreach(CrustStress crustStress in crustStressList)
+
+            foreach (CrustStress crustStress in crustStressList)
             {
+
+
                 crustStressTable.Rows.Add(
-                    crustStress.Id,
-                    crustStress.Isc_Id,
-                    crustStress.Site,
-                    crustStress.Latitude,
-                    crustStress.Longitude,
-                    crustStress.Azimuth,
-                    crustStress.Type,
-                    crustStress.Depth,
-                    crustStress.Quality,
-                    crustStress.Regime,
-                    crustStress.Locality,
-                    crustStress.Country,
-                    crustStress.Date,
-                    crustStress.Time,
-                    crustStress.Number,
-                    crustStress.SD,
-                    crustStress.TotalLength,
-                    crustStress.Vent,
-                    crustStress.TopDepth,
-                    crustStress.BottomDepth,
-                    crustStress.Anisotropy,
-                    crustStress.S1az,
-                    crustStress.S1pl,
-                    crustStress.S2az,
-                    crustStress.S2pl,
-                    crustStress.S3az,
-                    crustStress.S3pl,
-                    crustStress.MagnitudeType,
-                    crustStress.EarthquakeMagnitude,
-                    crustStress.Crust,
-                    crustStress.Reference1,
-                    crustStress.Reference2,
-                    crustStress.Reference3,
-                    crustStress.Reference4,
-                    crustStress.Reference5,
-                    crustStress.Reference6,
-                    crustStress.Comment,
-                    crustStress.Plate,
-                    crustStress.Dist
+                    ToDbValue(crustStress.ID),
+                    ToDbValue(crustStress.ISC_ID),
+                    ToDbValue(crustStress.SITE),
+                    SqlDecimal(crustStress.LAT),
+                    SqlDecimal(crustStress.LON),
+                    ToDbValue(crustStress.AZI),
+                    ToDbValue(crustStress.TYPE),
+                    ToDbValue(crustStress.DEPTH),
+                    ToDbValue(crustStress.QUALITY),
+                    ToDbValue(crustStress.REGIME),
+                    ToDbValue(crustStress.LOCALITY),
+                    ToDbValue(crustStress.COUNTRY),
+                    ToDbValue(crustStress.DATE),
+                    ToDbValue(crustStress.TIME),
+                    ToDbValue(crustStress.NUMBER),
+                    SqlDecimal(crustStress.SD),
+                    SqlDecimal(crustStress.TOT_LEN),
+                    ToDbValue(crustStress.VENT),
+                    SqlDecimal(crustStress.TOP),
+                    SqlDecimal(crustStress.BOT),
+                    ToDbValue(crustStress.ANISOTROPY),
+                    SqlDecimal(crustStress.S1AZ),
+                    SqlDecimal(crustStress.S1PL),
+                    SqlDecimal(crustStress.S2AZ),
+                    SqlDecimal(crustStress.S2PL),
+                    SqlDecimal(crustStress.S3AZ),
+                    ToDbValue(crustStress.S3PL),
+                    ToDbValue(crustStress.MAG_TYPE),
+                    ToDbValue(crustStress.EQ_MAG),
+                    ToDbValue(crustStress.CRUST),
+                    ToDbValue(crustStress.REF1),
+                    ToDbValue(crustStress.REF2),
+                    ToDbValue(crustStress.REF3),
+                    ToDbValue(crustStress.REF4),
+                    ToDbValue(crustStress.REF5),
+                    ToDbValue(crustStress.REF6),
+                    ToDbValue(crustStress.COMMENT),
+                    ToDbValue(crustStress.PLATE),
+                    SqlDecimal(crustStress.DIST)
                 );
+
             }
 
             DynamicParameters? parameters = new DynamicParameters();
@@ -126,5 +130,29 @@ public class StressRepository : IStressRepository
                 commandType: CommandType.StoredProcedure
             );
         }
+    }
+
+    private object ToDbValue(object? value)
+    {
+        return value ?? DBNull.Value;
+    }
+
+    private object SqlDecimal(object? value)
+    {
+        // 1. If it's already a null or DBNull, return DBNull
+        if (value == null || value == DBNull.Value) return DBNull.Value;
+
+        // 2. If it's a string, try to parse it. If empty or invalid, return DBNull
+        if (value is string str)
+        {
+            if (string.IsNullOrWhiteSpace(str)) return DBNull.Value;
+            return decimal.TryParse(str, out decimal result) ? result : DBNull.Value;
+        }
+
+        // 3. If it's already a numeric type, return it
+        if (value is decimal || value is double || value is float || value is int)
+            return value;
+
+        return DBNull.Value;
     }
 }

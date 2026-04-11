@@ -5,7 +5,6 @@ using EarthQuake.Models;
 using EarthQuake.Models.GeographicalBoundaryTypes;
 using EarthQuake.Persistence.Models;
 using EarthQuake.Persistence.Repository.Abstractions;
-using System.Web.WebPages;
 
 namespace EarthQuake.Computations.Seismology.SeismicRateChange;
 
