@@ -7,6 +7,9 @@ namespace EarthQuake.IntegrationTests;
 
 public class SqlServerTests : IAsyncLifetime
 {
+    //create a infrastrcutre layer that keeps the server instance
+    //the run the 
+
     private readonly MsSqlContainer _db;
 
     public SqlServerTests()

@@ -1,31 +1,44 @@
 ﻿using Microsoft.AspNetCore.SignalR.Client;
 
-namespace EarthquakeDashboard.Services;
-
-public class SignalRService
+namespace EarthquakeDashboard.Services
 {
-    private HubConnection? _hubConnection;
-
-    public event Action<int>? OnCounterUpdated;
-
-    public async Task ConnectAsync(string hubUrl)
+    public class SignalRService
     {
-        _hubConnection = new HubConnectionBuilder()
-            .WithUrl(hubUrl)
-            .WithAutomaticReconnect()
-            .Build();
+        private HubConnection? _connection;
 
-        _hubConnection.On<int>("ReceiveMessage", (count) =>
+        public event Action<int>? OnCounterUpdated;
+
+        public async Task ConnectAsync(string hubUrl)
         {
-            OnCounterUpdated?.Invoke(count);
-        });
+            // Prevent re-initializing if already connected
+            if (_connection != null && _connection.State != HubConnectionState.Disconnected)
+                return;
 
-        await _hubConnection.StartAsync();
-    }
+            _connection = new HubConnectionBuilder()
+                .WithUrl(hubUrl)
+                .WithAutomaticReconnect()
+                .Build();
 
-    public async Task IncrementCounter()
-    {
-        if (_hubConnection != null)
-            await _hubConnection.SendAsync("IncrementCounter");
+            _connection.On<int>("CounterUpdated", (count) => OnCounterUpdated?.Invoke(count));
+
+            try
+            {
+                await _connection.StartAsync();
+            }
+            catch (Exception ex)
+            {
+                // Log this to a place you can see, like a file or the Debug console
+                System.Diagnostics.Debug.WriteLine($"SignalR Error: {ex.Message}");
+            }
+        }
+
+
+        public async Task IncrementCounter()
+        {
+            if (_connection != null)
+            {
+                await _connection.InvokeAsync("IncrementCounter");
+            }
+        }
     }
 }

@@ -47,7 +47,7 @@ public class FaultRepository : IFaultRepository
     {
         using (var sql = CreateConnection())
         {
-            var table = new DataTable();
+            DataTable? table = new DataTable();
 
             table.Columns.Add("averageDip", typeof(string));
             table.Columns.Add("averageRake", typeof(string));
@@ -84,7 +84,7 @@ public class FaultRepository : IFaultRepository
                 );
             }
 
-            var parameters = new DynamicParameters();
+            DynamicParameters? parameters = new DynamicParameters();
             parameters.Add(
                 "@FaultLine",
                 table.AsTableValuedParameter("dbo.FaultLine")

@@ -13,16 +13,13 @@ public class DataAutomate
     private readonly System.Timers.Timer _timer;
     private readonly IConfiguration _configuration;
     private readonly HttpClient _httpClient;
-    private bool _hasRunToday;
-    private DateTime _lastRunDate = DateTime.MinValue;
 
     public DataAutomate(IConfiguration configuration, HttpClient httpClient, ILogger<DataAutomate> logger)
     {
         _configuration = configuration;
         _httpClient = httpClient;
         _logger = logger;
-
-        _timer = new System.Timers.Timer(TimeSpan.FromHours(1).TotalMilliseconds);
+        _timer = new System.Timers.Timer(TimeSpan.FromMinutes(1).TotalMilliseconds);
         _timer.Elapsed += OnTimedEvent;
         _timer.AutoReset = true;
     }
@@ -42,37 +39,48 @@ public class DataAutomate
     {
         var now = DateTime.Now;
         _logger.LogInformation("Timer Triggered");
+        RunDataUpdate().GetAwaiter().GetResult();
 
-        // Reset flag if it's a new day
-        if (_lastRunDate.Date != now.Date)
-        {
-            _hasRunToday = false;
-        }
-
-        // If it's 23:00 (11 PM) and hasn't run yet
-        if (now.Hour == 23 && !_hasRunToday)
-        {
-            RunDataUpdate().GetAwaiter().GetResult();
-
-            _hasRunToday = true;
-            _lastRunDate = now.Date;
-        }
     }
 
     private async Task RunDataUpdate()
     {
         try
         {
-            string? url = _configuration["DataAutomate:UpdateUrl"];
-            using StringContent? content = new StringContent(string.Empty);
-            HttpResponseMessage? response = await _httpClient.PostAsync(url, content);
+            // 1. Format dates for the URL
+            string startTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss");
+            string endTime = DateTime.Now.AddMinutes(1).ToString("yyyy-MM-ddTHH:mm:ss");
+
+            // 2. Safely get the template from configuration
+            string? urlTemplate = _configuration["DataAutomate:UpdateUrl"];
+
+            if (string.IsNullOrEmpty(urlTemplate))
+            {
+                _logger.LogError("UpdateUrl is missing in configuration.");
+                return;
+            }
+
+            // 3. Construct the full URL
+            string url = string.Format(urlTemplate, startTime, endTime);
+
+            // 4. Send the POST request
+            using var content = new StringContent(string.Empty);
+            using HttpResponseMessage response = await _httpClient.PostAsync(url, content);
             response.EnsureSuccessStatusCode();
-            _logger.LogInformation("Updating data at: " + DateTime.Now);
+            string resultString = await response.Content.ReadAsStringAsync();
+
+            _logger.LogInformation("{0} Earthquake found in : {1} - {2}",resultString ,startTime, endTime);
+
         }
-        catch (Exception ex) 
+        catch (HttpRequestException ex)
         {
-            _logger.LogError(ex, ex.Message);
+            _logger.LogError(ex, "API request failed.");
         }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "An unexpected error occurred.");
+        }
+
     }
 
 }

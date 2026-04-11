@@ -25,7 +25,7 @@ namespace EarthQuake.Controllers
         {
             try
             {
-                _api.SendQuery(DateOnly.FromDateTime(DateTime.Now), DateOnly.FromDateTime(DateTime.Now.AddDays(1)));
+                _api.SendQuery(DateTime.Now, DateTime.Now.AddDays(1));
             }
             catch(Exception ex)
             {
@@ -34,18 +34,20 @@ namespace EarthQuake.Controllers
             
         }
 
-        [HttpPost("daterange")]
-        public void PostQuakesBetweenDate(DateTime startdate, DateTime enddate)
+        [HttpPost("datetimerange")]
+        public async Task<int> PostQuakesBetweenDate(DateTime startDateTime, DateTime endDateTime)
         {
             try
             {
-                _api.SendQuery(DateOnly.FromDateTime(startdate), DateOnly.FromDateTime(enddate));
+                return await _api.SendQuery(startDateTime, endDateTime);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, ex.Message);
+                return 0;
             }
         }
+
 
         [HttpGet(Name = "GetQuakes")]
         public async Task<ActionResult<List<DBFeature>>> GetQuakeData(int valuesToShow)

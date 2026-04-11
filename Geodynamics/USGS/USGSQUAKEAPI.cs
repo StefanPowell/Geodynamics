@@ -20,11 +20,11 @@ namespace EarthQuake.USGS
             _logger = logger;
         }
 
-        public async void SendQuery(DateOnly starttime, DateOnly endtime)
+        public async Task<int> SendQuery(DateTime startDateTime, DateTime endDateTime)
         {
             try
             {
-                string url = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=" + starttime.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture) +"&endtime=" + endtime.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
+                string url = $"https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={startDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss")}&endtime={endDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss")}";
                 HttpResponseMessage response = await _client.GetAsync(url);
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
@@ -32,18 +32,24 @@ namespace EarthQuake.USGS
                 if (EarthQuakeDataRoot != null)
                 {
                     List<Feature> featurelist = EarthQuakeDataRoot.features;
-                    await earthquakeRepo.SaveData(featurelist);
+                    if(featurelist.Count() > 0)
+                    {
+                        await earthquakeRepo.SaveData(featurelist);
+                    }
+                    return featurelist.Count;
                 }
+                return 0;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, ex.Message);
+                return 0;
             }
         }
 
         public async Task <List<Feature>> GetQuakesQuery()
         {
-            string url = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2025-06-13&endtime=2025-06-14";
+            string url = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2026-03-11T00:00:00&endtime=2026-03-11T00:59:00";
             HttpResponseMessage response = await _client.GetAsync(url);
             response.EnsureSuccessStatusCode();
             string responseBody = await response.Content.ReadAsStringAsync();

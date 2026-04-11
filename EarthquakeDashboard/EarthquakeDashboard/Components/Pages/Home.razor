@@ -20,27 +20,20 @@
 
     protected override async Task OnInitializedAsync()
     {
-        // Connect to the SignalR hub
-        await SignalRService.ConnectAsync("http://localhost:50392/EarthquakeHub");
+        await SignalRService.ConnectAsync("https://localhost:44395/EarthquakeHub");
 
-        // Subscribe to updates
-        SignalRService.OnCounterUpdated += (count) =>
-        {
-            currentCount = count;
-            InvokeAsync(StateHasChanged); // refresh UI
-        };
+        SignalRService.OnCounterUpdated -= UpdateCounter;
+        SignalRService.OnCounterUpdated += UpdateCounter;
+    }
+
+    private void UpdateCounter(int count)
+    {
+        currentCount = count;
+        InvokeAsync(StateHasChanged);
     }
 
     private async Task IncrementNumber()
     {
-        try
-        {
-            await SignalRService.IncrementCounter();
-        }
-        catch(Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-        }
-
+        await SignalRService.IncrementCounter();
     }
 }

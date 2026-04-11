@@ -6,7 +6,7 @@ namespace EarthQuake.USGS.Interfaces
 {
     public interface IUSGSQUAKEAPI
     {
-        void SendQuery(DateOnly starttime, DateOnly endtime);
+        Task<int> SendQuery(DateTime startDateTime, DateTime endDateTime);
         Task<List<Feature>> GetQuakesQuery();
         Task<List<StationData>> GetStations(double latitude, double longitude, int totalstations, int maxradius);
         Task PostWaveFormData(DateTime startTime, DateTime endTime, ServiceIrisEduData data = null);
