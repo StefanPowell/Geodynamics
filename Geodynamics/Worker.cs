@@ -35,7 +35,7 @@ public class Worker : BackgroundService
 
     public void StartAllBackGroundServices()
     {
-        _stressAccumulationService.Start();
+        //_stressAccumulationService.Start();
     }
 
     public void StopAllBackGroundServices()

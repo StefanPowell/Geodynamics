@@ -82,5 +82,63 @@ namespace EarthQuake.Persistence.Repository
                 throw new ArgumentException("Invalid Unit of Measure Type specified.", nameof(UnitOfMeasure));
             }
         }
+
+        public async Task<List<int>> GetQuakesNeedingWaveformCheck()
+        {
+            using (var sql = CreateConnection())
+            {
+                IEnumerable<int> featureIdList = await sql.QueryAsync<int>(
+                    "dbo.usp_Feature_Get_QuakesNeedingWaveform",
+                    null,
+                    commandType: CommandType.StoredProcedure
+                );
+
+                return featureIdList.ToList();
+            }
+        }
+
+        public async Task RemoveQuakeFromWaveFormCheckList(int featureId)
+        {
+            using (var sql = CreateConnection())
+            {
+                var parameters = new
+                {   
+                    FeatureId = featureId
+                };
+
+                await sql.ExecuteAsync(
+                    "dbo.usp_Feature_Delete_QuakesNeedingWaveform",
+                    parameters,
+                    commandType: CommandType.StoredProcedure
+                );
+            }
+        }
+
+        public async Task InsertStationWithFeatureWaveformData(int featureId, StationData stationData)
+            {
+                using (var sql = CreateConnection())
+                {
+                    var parameters = new
+                    {
+                        FeatureId = featureId,
+                        Network = stationData.network,
+                        Station = stationData.station,
+                        Latitude = stationData.latitude,
+                        Longitude = stationData.longitude,
+                        Elevation = stationData.elevation,
+                        SiteName = stationData.sitename,
+
+                        StartTime = DateTime.Parse(stationData.starttime),
+                        EndTime = DateTime.Parse(stationData.endtime)
+                    };
+
+                    await sql.ExecuteAsync(
+                        "dbo.usp_Set_FeatureAssociated_GroundStation",
+                        parameters,
+                        commandType: CommandType.StoredProcedure
+                    );
+                }
+            }
+
     }
 }

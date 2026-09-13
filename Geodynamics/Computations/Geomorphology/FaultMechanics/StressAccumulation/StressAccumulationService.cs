@@ -4,6 +4,7 @@ using EarthQuake.Persistence.Repository.Abstractions;
 using System.Text.Json;
 using System.Timers;
 
+//stop this service fro now, its killing the processor
 namespace EarthQuake.Computations.Geomorphology.FaultMechanics.StressAccumulation
 {
     public class StressAccumulationService : IStressAccumulationService

@@ -88,13 +88,13 @@ namespace EarthQuake.USGS
             return stationList;
         }
 
-        public async Task PostWaveFormData(DateTime startTime, DateTime endTime, ServiceIrisEduData data = null)
+        public async Task<List<miniSEED>> GetWaveFormData(DateTime startTime, DateTime endTime, string network, string station, string location, string channel, string format)
         {
-            string url = $"https://service.iris.edu/fdsnws/dataselect/1/query?net=IU&sta=ANMO&loc=00&cha=BHZ&starttime={startTime}&endtime={endTime}&format=geocsv.inline";
+            string url = $"https://service.iris.edu/fdsnws/dataselect/1/query?net={network}&sta={station}&loc={location}&cha={channel}&starttime={startTime.ToString("yyyy-MM-ddTHH:mm:ss")}&endtime={endTime.ToString("yyyy-MM-ddTHH:mm:ss")}&format={format}";
             HttpResponseMessage response = await _client.GetAsync(url);
             response.EnsureSuccessStatusCode();
             string responseBody = await response.Content.ReadAsStringAsync();
-            List<miniSEED> WaveFormData = new List<miniSEED>();
+            List<miniSEED> waveFormData = new List<miniSEED>();
 
             string[] lines = responseBody.Split('\n');
 
@@ -111,14 +111,15 @@ namespace EarthQuake.USGS
                 if (DateTime.TryParse(parts[0], null, DateTimeStyles.AdjustToUniversal, out DateTime time) &&
                     double.TryParse(parts[1], out double amplitude))
                 {
-                    WaveFormData.Add(new miniSEED
+                    waveFormData.Add(new miniSEED
                     {
                         time = time,
                         amplitude = amplitude
                     });
                 }
             }
-            await earthquakeRepo.SaveWaveFormData(WaveFormData);
-        }   
+            return waveFormData;
+        }
+        
     }
 }

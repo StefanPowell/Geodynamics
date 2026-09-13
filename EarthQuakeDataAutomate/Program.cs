@@ -1,3 +1,4 @@
+using EarthQuake.Persistence.Extensions;
 using EarthQuakeDataAutomate;
 using Serilog;
 
@@ -13,7 +14,7 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Logging.ClearProviders();
 builder.Logging.AddSerilog();
-
+builder.Services.EarthQuakePersistentLayer(builder.Configuration);
 // Register HttpClient and Worker
 builder.Services.AddHttpClient();
 builder.Services.AddSingleton<DataAutomate>();

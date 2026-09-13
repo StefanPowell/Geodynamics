@@ -4,6 +4,7 @@ using EarthQuake.Persistence.Enum;
 using EarthQuake.Persistence.Models;
 using EarthQuake.Persistence.Repository.Abstractions;
 using Microsoft.Data.SqlClient;
+using Microsoft.Identity.Client;
 using System.Data;
 
 namespace EarthQuake.Persistence.Repository;
@@ -207,6 +208,52 @@ public class EarthquakeRepository : IEarthquakeRepository
             );
 
             return totalQuakes;
+        }
+    }
+
+    //fix this
+    public async Task<Feature> GetEarthQuakeByFeatureId(int featureId)
+    {
+        using var sql = CreateConnection();
+
+        var parameters = new
+        {
+            FeatureId = featureId
+        };
+
+        var result = await sql.QueryAsync<Feature, Properties, Geometry, Feature>(
+            "dbo.usp_Get_Earthquake",
+            (feature, properties, geometry) =>
+            {
+                feature.properties = properties;
+                feature.geometry = geometry;
+
+                return feature;
+            },
+            parameters,
+            commandType: CommandType.StoredProcedure,
+            splitOn: "mag,type"
+        );
+
+        return result.First();
+    }
+
+    public async Task<List<Feature>> GetEarthquakesByDate(DateTime datetime)
+    {
+        using (var sql = CreateConnection())
+        {
+            var parameters = new
+            {
+                @STARTDATETIME = datetime
+            };
+
+            IEnumerable<Feature> earthquakes = await sql.QueryAsync<Feature>(
+                "dbo.usp_Get_Earthquakes_InDay",
+                parameters,
+                commandType: CommandType.StoredProcedure
+            );
+
+            return [..earthquakes];
         }
     }
 }

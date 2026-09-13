@@ -11,4 +11,6 @@ public interface IEarthquakeRepository
     Task SaveWaveFormData(List<miniSEED> WaveFormData);
     Task UpdateFaultStress(FaultStress faultStress);
     int QuakesInTimeFrameAndWithinDistanceOfFault(DateTime starttime, DateTime endTime, double distance, UnitOfMeasure metric);
+    Task<Feature> GetEarthQuakeByFeatureId(int featureId);
+    Task<List<Feature>> GetEarthquakesByDate(DateTime datetime);
 }

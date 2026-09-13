@@ -9,6 +9,6 @@ namespace EarthQuake.USGS.Interfaces
         Task<int> SendQuery(DateTime startDateTime, DateTime endDateTime);
         Task<List<Feature>> GetQuakesQuery();
         Task<List<StationData>> GetStations(double latitude, double longitude, int totalstations, int maxradius);
-        Task PostWaveFormData(DateTime startTime, DateTime endTime, ServiceIrisEduData data = null);
+        Task<List<miniSEED>> GetWaveFormData(DateTime startTime, DateTime endTime, string network, string station, string location = "00", string channel = "BH?", string format = "geocsv.inline");
     }
 }

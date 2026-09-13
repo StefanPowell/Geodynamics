@@ -63,5 +63,22 @@ namespace EarthQuake.Controllers
                                     $"An error occurred while processing the request: {ex.Message}");
             }
         }
+
+        /*
+        [HttpGet(Name = "GetEarthquakesByDate")]
+        public async Task<ActionResult<List<Feature>>> GetEarhquakeByDay(DateTime dateTime)
+        {
+            try
+            {
+                List<Feature> allquakes = await _earthquakeRepository.GetEarthquakesByDate(dateTime);
+                return Ok(allquakes);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status400BadRequest,
+                                    $"An error occurred while processing the request: {ex.Message}");
+            }
+        }
+        */
     }
 }

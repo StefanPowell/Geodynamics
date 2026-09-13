@@ -23,6 +23,9 @@ public static class DependencyInjection
         services.AddTransient<IStressRepository>(sp =>
             new StressRepository(earthquakeDatabaseConnectionString));
 
+        services.AddTransient<IStationRepository>(sp =>
+            new StationRepository(earthquakeDatabaseConnectionString));
+
         return services;
     }
 

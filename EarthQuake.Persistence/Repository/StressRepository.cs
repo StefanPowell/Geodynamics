@@ -96,6 +96,7 @@ public class StressRepository : IStressRepository
                     SqlDecimal(crustStress.TOP),
                     SqlDecimal(crustStress.BOT),
                     ToDbValue(crustStress.ANISOTROPY),
+                    ToDbValue(crustStress.METHOD),
                     SqlDecimal(crustStress.S1AZ),
                     SqlDecimal(crustStress.S1PL),
                     SqlDecimal(crustStress.S2AZ),

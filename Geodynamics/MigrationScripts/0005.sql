@@ -111,3 +111,61 @@ BEGIN
 
 END;
 GO
+
+
+CREATE TABLE [dbo].[waveTravelTime] (
+    [Id] [int] IDENTITY(1,1) NOT NULL,
+    [DeltaDegrees] REAL NOT NULL,
+    [PWaveMinutes] REAL NOT NULL,
+    [PWaveSeconds] REAL NOT NULL,
+    [SPTimeMinutes] REAL NOT NULL,
+    [SPTimeSeconds] REAL NOT NULL
+);
+GO
+
+CREATE TABLE [dbo].[PendingWaveformDataRetrieval](
+    [Id] [int] IDENTITY(1,1) NOT NULL,
+    [FeatureId] [int] NOT NULL
+);
+Go
+
+CREATE TRIGGER Trigger_SaveEarthquakeToFindWaveform_OnInsert
+ON [dbo].[Feature]
+AFTER INSERT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    INSERT INTO [dbo].[PendingWaveformDataRetrieval]
+    SELECT TOP(1) 
+        [FeatureId]
+    FROM
+        [dbo].[Feature]
+    ORDER BY Id DESC;
+
+END;
+Go
+
+CREATE PROCEDURE [dbo].[usp_Get_Earthquake]
+(
+    @FeatureId INT
+)
+AS BEGIN
+    SET NOCOUNT ON;
+
+    SELECT
+        Feature.FeatureId AS Id,
+        Feature.[Type] AS FeatureType,
+        FeatureGeometry.[Type] AS GeometryType,
+        FeatureGeometry.Latitude AS Latititude,
+        FeatureGeometry.Longitude AS Longitude,
+        FeatureGeometry.Depth AS Depth,
+        FeatureProperty.mag AS Magnitude,
+        FeatureProperty.place AS Place,
+        DATEADD(SECOND,  FeatureProperty.[time]/1000, '1970-01-01') AS QuakeDateTime
+    FROM [dbo].[Feature] Feature
+    JOIN [dbo].[Geometry] FeatureGeometry ON Feature.GeometryId = FeatureGeometry.GeometryId
+    JOIN [dbo].[Properties] FeatureProperty ON Feature.PropertiesId = FeatureProperty.PropertiesId
+    WHERE Feature.FeatureId = @FeatureId
+END;
+Go
